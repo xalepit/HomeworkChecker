@@ -7,6 +7,9 @@ namespace HomeworkChecker.UI.ViewModels.Pages
 {
     public partial class TestDataViewModel : ObservableObject, INavigationAware
     {
+        [ObservableProperty]
+        private string _testDataText = string.Empty;
+
         private bool _isInitialized = false;
         public Task OnNavigatedToAsync()
         {

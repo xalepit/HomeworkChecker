@@ -16,8 +16,29 @@
   Foreground="{DynamicResource TextFillColorPrimaryBrush}"
   mc:Ignorable="d"
 >
+    <StackPanel>
+        <Menu Margin="0,10,0,10">
+            <MenuItem Header="导入 txt/dat">
+                <MenuItem.Icon>
+                    <ui:SymbolIcon Symbol="ArrowDownload24" />
+                </MenuItem.Icon>
+            </MenuItem>
 
-    <Grid>
-        
-    </Grid>
+            <MenuItem Header="保存">
+                <MenuItem.Icon>
+                    <ui:SymbolIcon Symbol="Save24" />
+                </MenuItem.Icon>
+            </MenuItem>
+            <Separator />
+            
+        </Menu>
+        <!--之后需要换成自定义的UserControl，现在的TextBox无法显示滚动条-->
+        <TextBox 
+            Text="{Binding ViewModel.TestDataText, Mode=TwoWay}"
+            AcceptsReturn="True"
+            AcceptsTab="True"
+            TextWrapping="NoWrap"
+            MinHeight="200"
+            MaxHeight="600"/>
+    </StackPanel>
 </Page>

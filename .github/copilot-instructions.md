@@ -7,3 +7,5 @@
 - 用户偏好减少冗余状态，倾向只保留单一主题选择状态而不是并存多个主题状态字段。
 - 用户倾向按设置大类拆分 ViewModel（如 Personalization 与 About），避免将所有设置项集中在单个 SettingsViewModel。
 - 用户希望暂缓实现主题色更改逻辑，后续通过独立的 ColorPickerDialog 或 ColorPickerControl 实现。
+- 当前阶段仅模拟 UI 搭建 beta 初版元素，暂时不需要单开 Git 分支。
+- 用户希望在后续开发建议中，当适合开分支或有更合适的 Git 操作时主动提醒。
