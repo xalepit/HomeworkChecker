@@ -1,0 +1,81 @@
+﻿<Page
+  x:Class="HomeworkChecker.UI.Views.Pages.HomePage"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+  xmlns:local="clr-namespace:HomeworkChecker.UI.Views.Pages"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+  Title="HomePage"
+  d:DataContext="{d:DesignInstance local:HomePage,
+                                     IsDesignTimeCreatable=False}"
+  d:DesignHeight="450"
+  d:DesignWidth="800"
+  ui:Design.Background="{DynamicResource ApplicationBackgroundBrush}"
+  ui:Design.Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+  Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+  mc:Ignorable="d"
+>
+    <StackPanel>
+
+        <ui:TextBlock Text="选择exe文件" FontTypography="Subtitle" Margin="0,10,0,10"/>
+
+        <ui:Card Margin="0,0,0,5" Height="auto">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+
+                <ui:SymbolIcon Grid.Column="0" Symbol="LocalLanguage24" Margin="0,0,15,0"/>
+
+                <StackPanel Grid.Column="1">
+                    <ui:TextBlock Text="请拖拽或选择Demo exe" FontTypography="Body" Appearance="Primary"/>
+                    <ui:TextBlock Text="即老师下发的exe" FontTypography="Caption" Appearance="Secondary"/>
+                </StackPanel>
+
+                <ui:TextBlock Grid.Column="2" Text="占位"  Appearance="Primary" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+
+                <ui:Button Grid.Column="3"
+                           Content="选择文件" 
+                           Margin="15,0,0,0" 
+                           VerticalAlignment="Center"
+                           AllowDrop="True"
+                           Command="{Binding ViewModel.SelectDemoExeCommand}"/>
+            </Grid>
+        </ui:Card>
+
+        <ui:Card Margin="0,0,0,5" Height="auto">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+
+                <ui:SymbolIcon Grid.Column="0" Symbol="LocalLanguage24" Margin="0,0,15,0"/>
+
+                <StackPanel Grid.Column="1">
+                    <ui:TextBlock Text="请拖拽或选择待检测 exe" FontTypography="Body" Appearance="Primary"/>
+                    <ui:TextBlock Text="即你自己写的exe :)" FontTypography="Caption" Appearance="Secondary"/>
+                </StackPanel>
+
+                <ui:TextBlock Grid.Column="2" Text="占位"  Appearance="Primary" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+
+                <ui:Button Grid.Column="3"
+                           Content="选择文件" 
+                           Margin="15,0,0,0" 
+                           VerticalAlignment="Center"
+                           AllowDrop="True"
+                           Command="{Binding ViewModel.SelectStudentExeCommand}"/>
+            </Grid>
+        </ui:Card>
+        <!--怎么改变不了字体的大小？-->
+        <!--在选好exe和配置好测试数据之前，该按钮不可用-->
+        <ui:Button Content="开始检测" FontSize="32" Appearance="Primary" Height ="40" Width="100" HorizontalAlignment="Center" Margin="0,40,0,0" />
+        <!--点击之后按钮下面的界面就用来显示比对结果。暂时不清楚-->
+    </StackPanel>
+</Page>

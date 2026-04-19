@@ -1,0 +1,11 @@
+<Solution>
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="HomeworkChecker.Core/HomeworkChecker.Core.csproj" Id="ba374f24-afbc-465c-9cf8-7f1bbb0eccd6">
+    <Build Solution="Debug|Any CPU" Project="false" />
+  </Project>
+  <Project Path="HomeworkChecker/HomeworkChecker.UI.csproj" />
+</Solution>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+
+  <data name="Settings_Personalization" xml:space="preserve"><value>Personalization</value></data>
+  <data name="Settings_Theme_Title" xml:space="preserve"><value>App theme</value></data>
+  <data name="Settings_Theme_Description" xml:space="preserve"><value>Change the appearance of the application</value></data>
+  <data name="Settings_Theme_Light" xml:space="preserve"><value>Light</value></data>
+  <data name="Settings_Theme_Dark" xml:space="preserve"><value>Dark</value></data>
+  <data name="Settings_UseSystem" xml:space="preserve"><value>Use system setting</value></data>
+
+  <data name="Settings_Accent_Title" xml:space="preserve"><value>Theme color</value></data>
+  <data name="Settings_Accent_Description" xml:space="preserve"><value>Change the theme color of the application</value></data>
+  <data name="Settings_Accent_Default" xml:space="preserve"><value>Default color</value></data>
+  <data name="Settings_Accent_Custom" xml:space="preserve"><value>Custom color</value></data>
+  <data name="Settings_Accent_SelectColor" xml:space="preserve"><value>Select color</value></data>
+
+  <data name="Settings_Scale_Title" xml:space="preserve"><value>UI scale</value></data>
+  <data name="Settings_Scale_Description" xml:space="preserve"><value>Change widget and font size</value></data>
+
+  <data name="Settings_Language_Title" xml:space="preserve"><value>Language</value></data>
+  <data name="Settings_Language_Description" xml:space="preserve"><value>Set the UI language of the application</value></data>
+
+  <data name="Settings_About_Section" xml:space="preserve"><value>About</value></data>
+  <data name="Settings_Help_Title" xml:space="preserve"><value>Help</value></data>
+  <data name="Settings_Help_Description" xml:space="preserve"><value>Learn how to use ...</value></data>
+  <data name="Settings_Help_OpenGuide" xml:space="preserve"><value>Open guide</value></data>
+
+  <data name="Settings_Feedback_Title" xml:space="preserve"><value>Feedback</value></data>
+  <data name="Settings_Feedback_Description" xml:space="preserve"><value>Send feedback to help improve ...</value></data>
+  <data name="Settings_Feedback_Action" xml:space="preserve"><value>Send feedback</value></data>
+
+  <data name="Settings_About_Title" xml:space="preserve"><value>About</value></data>
+  <data name="Settings_About_Description" xml:space="preserve"><value>All rights reserved...</value></data>
+  <data name="Settings_About_CheckUpdate" xml:space="preserve"><value>Check update</value></data>
+
+  <data name="Snackbar_Saved_Title" xml:space="preserve"><value>Saved</value></data>
+  <data name="Snackbar_Restart_Message" xml:space="preserve"><value>Restart to apply changes</value></data>
+</root>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+
+  <data name="Settings_Personalization" xml:space="preserve"><value>個人化</value></data>
+  <data name="Settings_Theme_Title" xml:space="preserve"><value>應用主題</value></data>
+  <data name="Settings_Theme_Description" xml:space="preserve"><value>變更應用程式的外觀</value></data>
+  <data name="Settings_Theme_Light" xml:space="preserve"><value>淺色</value></data>
+  <data name="Settings_Theme_Dark" xml:space="preserve"><value>深色</value></data>
+  <data name="Settings_UseSystem" xml:space="preserve"><value>使用系統設定</value></data>
+
+  <data name="Settings_Accent_Title" xml:space="preserve"><value>主題顏色</value></data>
+  <data name="Settings_Accent_Description" xml:space="preserve"><value>變更應用程式的主題顏色</value></data>
+  <data name="Settings_Accent_Default" xml:space="preserve"><value>預設顏色</value></data>
+  <data name="Settings_Accent_Custom" xml:space="preserve"><value>自訂顏色</value></data>
+  <data name="Settings_Accent_SelectColor" xml:space="preserve"><value>選擇顏色</value></data>
+
+  <data name="Settings_Scale_Title" xml:space="preserve"><value>介面縮放</value></data>
+  <data name="Settings_Scale_Description" xml:space="preserve"><value>變更小工具與字體大小</value></data>
+
+  <data name="Settings_Language_Title" xml:space="preserve"><value>語言</value></data>
+  <data name="Settings_Language_Description" xml:space="preserve"><value>設定軟體介面語言</value></data>
+
+  <data name="Settings_About_Section" xml:space="preserve"><value>關於</value></data>
+  <data name="Settings_Help_Title" xml:space="preserve"><value>幫助</value></data>
+  <data name="Settings_Help_Description" xml:space="preserve"><value>了解有關...的使用方法</value></data>
+  <data name="Settings_Help_OpenGuide" xml:space="preserve"><value>開啟軟體指南</value></data>
+
+  <data name="Settings_Feedback_Title" xml:space="preserve"><value>提供回饋</value></data>
+  <data name="Settings_Feedback_Description" xml:space="preserve"><value>提供回饋，幫助我改善...!</value></data>
+  <data name="Settings_Feedback_Action" xml:space="preserve"><value>提供回饋</value></data>
+
+  <data name="Settings_About_Title" xml:space="preserve"><value>關於</value></data>
+  <data name="Settings_About_Description" xml:space="preserve"><value>版權所有...</value></data>
+  <data name="Settings_About_CheckUpdate" xml:space="preserve"><value>檢查更新</value></data>
+
+  <data name="Snackbar_Saved_Title" xml:space="preserve"><value>修改成功</value></data>
+  <data name="Snackbar_Restart_Message" xml:space="preserve"><value>重新啟動後設定生效</value></data>
+</root>

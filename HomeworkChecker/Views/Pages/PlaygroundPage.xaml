@@ -1,0 +1,128 @@
+<Page
+  x:Class="HomeworkChecker.Views.Pages.PlaygroundPage"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+  xmlns:local="clr-namespace:HomeworkChecker.Views.Pages"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+  Title="PlaygroundPage"
+  d:DataContext="{d:DesignInstance local:PlaygroundPage,
+                                     IsDesignTimeCreatable=False}"
+  d:DesignHeight="450"
+  d:DesignWidth="800"
+  ui:Design.Background="{DynamicResource ApplicationBackgroundBrush}"
+  ui:Design.Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+  Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+  mc:Ignorable="d"
+>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Margin="10,10,10,10" Grid.Column="0">
+
+            <ui:Anchor NavigateUri="https://wpfui.lepo.co/" Icon="{ui:SymbolIcon Link24}"  Content="WPF UI Anchor" Margin="0,0,0,10"/>
+
+            <ui:Button Content="WPF UI Button" Icon="{ui:SymbolIcon Fluent24}" Margin="0,0,0,10"/>
+
+            <ui:Button Content="WPF UI Accent Button" Appearance="Primary" Icon="{ui:SymbolIcon Fluent24}" Margin="0,0,0,10" Click="Button_Click"/>
+            
+            <ui:DropDownButton Content="DropDownButton" Margin="0,0,0,10">
+                <ui:DropDownButton.Flyout>
+                    <ContextMenu>
+                        <MenuItem Header="新建文件" />
+                        <MenuItem Header="新建文件夹" />
+                    </ContextMenu>
+                </ui:DropDownButton.Flyout>
+            </ui:DropDownButton>
+
+            <ui:HyperlinkButton Content="HyperlinkButton" NavigateUri="https://wpfui.lepo.co/" Margin="0,0,0,10"/>
+
+            <ToggleButton Content="ToggleButton" Margin="0,0,0,10"/>
+
+            <ui:ToggleSwitch Margin="0,0,0,10" OnContent="ToggleSwitch On" OffContent="ToggleSwitch Off"/>
+
+            <CheckBox Content="CheckBox" Margin="0,0,0,10"/>
+
+            <CheckBox Content="ThreeStateCheckBox(IsThreeState = &quot;True&quot;)" Margin="0,0,0,10" IsThreeState="True"/>
+
+            <ComboBox Margin="0,0,0,10" HorizontalAlignment="Left" SelectedIndex="0">
+                <ComboBoxItem Content="ComboBox Item 1"/>
+                <ComboBoxItem Content="ComboBox Item 2"/>
+                <ComboBoxItem Content="ComboBox Item 3"/>
+            </ComboBox>
+
+            <RadioButton Content="RadioButton option 1" GroupName="Demo"/>
+            <RadioButton Content="RadioButton option 2" GroupName="Demo"/>
+            <RadioButton Content="RadioButton option 2" GroupName="Demo"/>
+        </StackPanel>
+        
+        <StackPanel Grid.Column="1">
+            <TextBlock Text ="RatingControl、ThumbRate、SplitButton此处略，详情见WPF UI app" Foreground="{DynamicResource TextFillColorSecondaryBrush}" Margin = "0,10,0,10"/>
+
+            <Slider HorizontalAlignment="Left" Width="100" />
+
+            <Slider HorizontalAlignment="Left" Width="100" IsSnapToTickEnabled="True" TickFrequency="2"/>
+
+            <Slider HorizontalAlignment="Left" Width="100" IsSnapToTickEnabled="True" TickPlacement="Both"/>
+
+            <ui:Card Width="100">
+
+            </ui:Card>
+
+            <ui:CardExpander Margin="0,0,0,10" Height="auto">
+                <ui:CardExpander.Header>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <ui:SymbolIcon Grid.Column="0" Symbol="PaintBrush16" Margin="0,0,15,0"/>
+
+                        <StackPanel Grid.Column="1">
+                            <ui:TextBlock Text="应用主题" FontTypography="Body" Appearance="Primary"/>
+                            <ui:TextBlock Text="更改应用程序的主题颜色" FontTypography="Caption" Appearance="Secondary"/>
+                        </StackPanel>
+
+                        <ui:TextBlock Grid.Column="2" Text="深色" Margin="0,0,20,0" VerticalAlignment="Center"/>
+                    </Grid>
+                </ui:CardExpander.Header>
+
+                <StackPanel Margin="25,0,0,0">
+                    <RadioButton GroupName="ThemeGroup" Margin="0,0,0,8">
+                        <TextBlock Text="浅色" Margin="8,0,0,0" />
+                    </RadioButton>
+
+                    <RadioButton GroupName="ThemeGroup" Margin="0,0,0,8">
+                        <TextBlock Text="深色" Margin="8,0,0,0" />
+                    </RadioButton>
+
+                    <RadioButton GroupName="ThemeGroup">
+                        <TextBlock Text="使用系统设置" Margin="8,0,0,0" />
+                    </RadioButton>
+                </StackPanel>
+            </ui:CardExpander>
+
+            <TextBlock
+          Text="主文本 Primary"
+          Foreground="{DynamicResource TextFillColorPrimaryBrush}" />
+
+            <TextBlock
+          Text="次要说明 Secondary"
+          Foreground="{DynamicResource TextFillColorSecondaryBrush}" />
+
+            <TextBlock
+          Text="更弱提示 Tertiary"
+          Foreground="{DynamicResource TextFillColorTertiaryBrush}" />
+
+            <TextBlock
+          Text="不可用文本 Disabled"
+          Foreground="{DynamicResource TextFillColorDisabledBrush}" />
+        </StackPanel>
+    </Grid>
+</Page>
