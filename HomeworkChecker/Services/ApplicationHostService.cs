@@ -75,7 +75,7 @@ namespace HomeworkChecker.UI.Services
 
                 _uiScaleService.Apply(settings.UiScalePreference);
 
-                _navigationWindow.Navigate(typeof(Views.Pages.SettingsPage));
+                _navigationWindow.Navigate(typeof(Views.Pages.HomePage));
             }
 
             await Task.CompletedTask;

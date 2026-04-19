@@ -53,9 +53,7 @@ namespace HomeworkChecker.UI.Resources
         public static string Settings_About_Description => Get(nameof(Settings_About_Description));
         public static string Settings_About_CheckUpdate => Get(nameof(Settings_About_CheckUpdate));
 
-        public static string Navigation_Playground => Get(nameof(Navigation_Playground));
         public static string Navigation_Settings => Get(nameof(Navigation_Settings));
-        public static string Page_Playground => Get(nameof(Page_Playground));
         public static string Page_Settings => Get(nameof(Page_Settings));
 
         public static string Snackbar_Saved_Title => Get(nameof(Snackbar_Saved_Title));
