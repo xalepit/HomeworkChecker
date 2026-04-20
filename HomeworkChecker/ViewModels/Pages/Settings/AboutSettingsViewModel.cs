@@ -3,7 +3,7 @@
     public partial class AboutSettingsViewModel : ObservableObject
     {
         [ObservableProperty]
-        private string _appVersion = String.Empty;
+        private string _appVersion = string.Empty;
 
         public void Initialize() => AppVersion = $"{App.AppName} - {GetAssemblyVersion()}";
 

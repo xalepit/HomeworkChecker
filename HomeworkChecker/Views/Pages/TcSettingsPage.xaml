@@ -35,7 +35,7 @@
                     <ui:TextBlock Text="指定每行对空格/Tab的忽略规则：none / left / right / all。" FontTypography="Caption" Appearance="Secondary" />
                 </StackPanel>
                 <ComboBox Grid.Column="2"
-                      SelectedValue="{Binding ViewModel.TrimMode, Mode=TwoWay}"
+                      SelectedValue="{Binding ViewModel.CompareSettings.TrimMode, Mode=TwoWay}"
                       SelectedValuePath="Tag">
                     <ComboBoxItem Content="none（严格匹配）" Tag="none" />
                     <ComboBoxItem Content="left（忽略行首空白）" Tag="left" />
@@ -61,7 +61,7 @@
                 </StackPanel>
                 <ui:TextBox Grid.Column="2"
                         PlaceholderText="默认 0（例如：5）"
-                        Text="{Binding ViewModel.LineSkipText, Mode=TwoWay}" />
+                        Text="{Binding ViewModel.CompareSettings.LineSkip, Mode=TwoWay}" />
             </Grid>
         </ui:Card>
 
@@ -81,7 +81,7 @@
                 </StackPanel>
                 <ui:TextBox Grid.Column="2"
                         PlaceholderText="默认 0（例如：-2 或 3）"
-                        Text="{Binding ViewModel.LineOffsetText, Mode=TwoWay}" />
+                        Text="{Binding ViewModel.CompareSettings.LineOffset, Mode=TwoWay}" />
             </Grid>
         </ui:Card>
 
@@ -102,7 +102,7 @@
                 <ui:ToggleSwitch Grid.Column="2"
                              OnContent="开启"
                              OffContent="关闭"
-                             IsChecked="{Binding ViewModel.IgnoreBlank, Mode=TwoWay}" />
+                             IsChecked="{Binding ViewModel.CompareSettings.IgnoreBlank, Mode=TwoWay}" />
             </Grid>
         </ui:Card>
 
@@ -123,7 +123,7 @@
                 <ui:ToggleSwitch Grid.Column="2"
                              OnContent="严格区分"
                              OffContent="忽略差异"
-                             IsChecked="{Binding ViewModel.CrCrLfNotEqual, Mode=TwoWay}" />
+                             IsChecked="{Binding ViewModel.CompareSettings.CrCrLfNotEqual, Mode=TwoWay}" />
             </Grid>
         </ui:Card>
 
@@ -143,7 +143,7 @@
                 </StackPanel>
                 <ui:TextBox Grid.Column="2"
                         PlaceholderText="默认 0（例如：10）"
-                        Text="{Binding ViewModel.MaxDiffText, Mode=TwoWay}" />
+                        Text="{Binding ViewModel.CompareSettings.MaxDiffCount, Mode=TwoWay}" />
             </Grid>
         </ui:Card>
 
@@ -163,7 +163,7 @@
                 </StackPanel>
                 <ui:TextBox Grid.Column="2"
                         PlaceholderText="默认 0（例如：200）"
-                        Text="{Binding ViewModel.MaxLineText, Mode=TwoWay}" />
+                        Text="{Binding ViewModel.CompareSettings.MaxLineCount, Mode=TwoWay}" />
             </Grid>
         </ui:Card>
 
