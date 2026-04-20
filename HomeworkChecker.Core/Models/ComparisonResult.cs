@@ -5,7 +5,7 @@ using System.Text;
 namespace HomeworkChecker.Core.Models
 {
     // 单次比对的结果（是否通过、详细差异信息）
-    public class ComparisonResult
+    public sealed class ComparisonResult
     {
         public int TestCaseIndex { get; set; } = 0;
         public bool IsPassed { get; set; } = false;
@@ -13,7 +13,7 @@ namespace HomeworkChecker.Core.Models
 
         public List<DiffDetail> DiffDetails { get; set; } = new();
     }
-    public class DiffDetail
+    public sealed class DiffDetail
     {
         public int LineNumber1 { get; set; }
         public int LineNumber2 { get; set; }

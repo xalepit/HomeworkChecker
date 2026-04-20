@@ -1,4 +1,5 @@
-﻿using HomeworkChecker.UI.Services;
+﻿using HomeworkChecker.Core.Services;
+using HomeworkChecker.UI.Services;
 using HomeworkChecker.UI.Services.Settings;
 using HomeworkChecker.UI.ViewModels.Pages;
 using HomeworkChecker.UI.ViewModels.Windows;
@@ -71,6 +72,8 @@ namespace HomeworkChecker.UI
                 services.AddSingleton<TcSettingsViewModel>();
                 services.AddSingleton<TestDataPage>();
                 services.AddSingleton<TestDataViewModel>();
+
+                services.AddSingleton<ITestDataStorage, TestDataStorageService>();
             }).Build(); //Build创建IHost实例，这里赋值给私有只读字段_host
 
         //A dependency is an object that another object depends on.
