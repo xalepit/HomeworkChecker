@@ -4,6 +4,7 @@ using System.Text;
 
 namespace HomeworkChecker.Core.Models
 {
+    // TextComparer（txt_compare） 的所有配置选项（trim, lineskip 等）
     public class CompareOptions
     {
         public TrimType TrimMode { get; set; }

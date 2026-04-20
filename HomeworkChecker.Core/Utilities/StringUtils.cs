@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace HomeworkChecker.Core.Models
+namespace HomeworkChecker.Core.Utilities
 {
-    internal class CompareResult
+    public static class StringUtils
     {
     }
 }
