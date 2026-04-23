@@ -57,5 +57,12 @@ namespace HomeworkChecker.UI.ViewModels.Pages
                 StudentExePath = dialog.FileName;
             }
         }
+
+
+        [RelayCommand]
+        private async Task OnStartCompareAsync()
+        { 
+
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HomeworkChecker.Core.Services;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using Wpf.Ui.Abstractions.Controls;
@@ -7,20 +8,28 @@ namespace HomeworkChecker.UI.ViewModels.Pages
 {
     public partial class TestDataViewModel : ObservableObject, INavigationAware
     {
+        private readonly ITestDataStorage _testDataStorage;
         [ObservableProperty]
         private string _testDataText = string.Empty;
 
-        private bool _isInitialized = false;
-        public Task OnNavigatedToAsync()
+        public TestDataViewModel(ITestDataStorage testDataStorage)
         {
-            if (_isInitialized)
-                return Task.CompletedTask;
-            //
-
-            _isInitialized = true;
-            return Task.CompletedTask;
+            _testDataStorage = testDataStorage;
         }
 
-        public Task OnNavigatedFromAsync() => Task.CompletedTask;
+        private bool _isInitialized = false;
+        public async Task OnNavigatedToAsync()
+        {
+            if (_isInitialized)
+                return;
+
+            TestDataText = await _testDataStorage.LoadTestDataAsync();
+            _isInitialized = true;
+        }
+
+        public async Task OnNavigatedFromAsync()
+        {
+            await _testDataStorage.SaveTestDataAsync(TestDataText);
+        }
     }
 }
