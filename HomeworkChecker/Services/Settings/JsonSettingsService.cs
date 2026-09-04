@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Text.Json;
+using HomeworkChecker.Core.Utilities;
 using HomeworkChecker.UI.Models.Settings;
+using HomeworkChecker.UI.Resources;
 
 namespace HomeworkChecker.UI.Services.Settings
 {
@@ -36,10 +38,24 @@ namespace HomeworkChecker.UI.Services.Settings
             {
                 var settings = GetCurrent();
                 updateAction(settings);
-                SaveToDisk(settings);
+                try
+                {
+                    SaveToDisk(settings);
+                }
+                catch (Exception exception) when (exception is IOException or UnauthorizedAccessException)
+                {
+                    MessageBox.Show(
+                        $"{Translations.Settings_SaveFailedDescription}\n{exception.Message}",
+                        Translations.Settings_SaveFailed,
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Error);
+                }
             }
         }
 
+        /// <summary>
+        /// 从磁盘恢复设置；文件不可读或 JSON 损坏时回落默认值。
+        /// </summary>
         private static AppSettings LoadFromDisk()
         {
             try
@@ -47,28 +63,28 @@ namespace HomeworkChecker.UI.Services.Settings
                 if (!File.Exists(SettingsPath))
                     return new AppSettings();
 
-                var json = File.ReadAllText(SettingsPath);
+                var json = LocalFileStorage.ReadAllText(SettingsPath);
                 return JsonSerializer.Deserialize<AppSettings>(json) ?? new AppSettings();
             }
-            catch
+            catch (Exception exception) when (
+                exception is IOException or UnauthorizedAccessException or JsonException)
             {
-                // JSON 损坏时回落默认值，避免启动崩溃
                 return new AppSettings();
             }
         }
 
+        /// <summary>
+        /// 将当前设置原子写入应用数据目录。
+        /// </summary>
+        /// <param name="settings">待保存设置。</param>
         private static void SaveToDisk(AppSettings settings)
         {
-            var dir = Path.GetDirectoryName(SettingsPath)!;
-            if (!Directory.Exists(dir))
-                Directory.CreateDirectory(dir);
-
             var json = JsonSerializer.Serialize(settings, new JsonSerializerOptions
             {
                 WriteIndented = true
             });
 
-            File.WriteAllText(SettingsPath, json);
+            LocalFileStorage.WriteAllText(SettingsPath, json);
         }
     }
 }

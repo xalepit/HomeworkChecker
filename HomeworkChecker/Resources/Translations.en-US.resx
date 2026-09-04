@@ -24,6 +24,13 @@
   <data name="Settings_Language_Title" xml:space="preserve"><value>Language</value></data>
   <data name="Settings_Language_Description" xml:space="preserve"><value>Set the UI language of the application</value></data>
 
+  <data name="Settings_General_Section" xml:space="preserve"><value>General</value></data>
+  <data name="Settings_Timeout_Title" xml:space="preserve"><value>Run timeout</value></data>
+  <data name="Settings_Timeout_Description" xml:space="preserve"><value>Maximum time for each Demo or executable run per test case (3–10 seconds)</value></data>
+  <data name="Settings_Timeout_Unit" xml:space="preserve"><value>seconds</value></data>
+  <data name="Settings_Parallelism_Title" xml:space="preserve"><value>Parallel test cases</value></data>
+  <data name="Settings_Parallelism_Description" xml:space="preserve"><value>Number of test-case pipelines that may run simultaneously (1–8)</value></data>
+
   <data name="Settings_About_Section" xml:space="preserve"><value>About</value></data>
   <data name="Settings_Help_Title" xml:space="preserve"><value>Help</value></data>
   <data name="Settings_Help_Description" xml:space="preserve"><value>Learn how to use ...</value></data>
@@ -37,6 +44,165 @@
   <data name="Settings_About_Description" xml:space="preserve"><value>All rights reserved...</value></data>
   <data name="Settings_About_CheckUpdate" xml:space="preserve"><value>Check update</value></data>
 
-  <data name="Snackbar_Saved_Title" xml:space="preserve"><value>Saved</value></data>
-  <data name="Snackbar_Restart_Message" xml:space="preserve"><value>Restart to apply changes</value></data>
+  <data name="Navigation_Home" xml:space="preserve"><value>Home</value></data>
+  <data name="Navigation_TestData" xml:space="preserve"><value>Test data</value></data>
+  <data name="Navigation_CompareSettings" xml:space="preserve"><value>Text comparison</value></data>
+  <data name="Navigation_Settings" xml:space="preserve"><value>Settings</value></data>
+  <data name="Page_Home" xml:space="preserve"><value>Home</value></data>
+  <data name="Page_TestData" xml:space="preserve"><value>Test data</value></data>
+  <data name="Page_CompareSettings" xml:space="preserve"><value>Text comparison settings</value></data>
+  <data name="Page_Settings" xml:space="preserve"><value>Settings</value></data>
+  <data name="Common_Search" xml:space="preserve"><value>Search</value></data>
+  <data name="Common_SelectFile" xml:space="preserve"><value>Select file</value></data>
+  <data name="Common_StartCheck" xml:space="preserve"><value>Start check</value></data>
+  <data name="Common_On" xml:space="preserve"><value>On</value></data>
+  <data name="Common_Off" xml:space="preserve"><value>Off</value></data>
+  <data name="Common_Confirm" xml:space="preserve"><value>Confirm</value></data>
+  <data name="Common_Cancel" xml:space="preserve"><value>Cancel</value></data>
+
+  <data name="Home_ExecutableSection" xml:space="preserve"><value>Select executable files</value></data>
+  <data name="Home_Demo_Title" xml:space="preserve"><value>Select the Demo executable</value></data>
+  <data name="Home_Demo_Description" xml:space="preserve"><value>The reference program provided by the instructor</value></data>
+  <data name="Home_Student_Title" xml:space="preserve"><value>Select the executable to check</value></data>
+  <data name="Home_Student_Description" xml:space="preserve"><value>Your compiled homework program</value></data>
+  <data name="Home_CancelCheck" xml:space="preserve"><value>Cancel</value></data>
+  <data name="Home_ProgressFormat" xml:space="preserve"><value>Completed {0} / {1}</value></data>
+  <data name="Home_PathRequired" xml:space="preserve"><value>Select both the Demo and student executable.</value></data>
+  <data name="Home_PathMissingFormat" xml:space="preserve"><value>File not found: {0}</value></data>
+  <data name="Home_NoTestCases" xml:space="preserve"><value>No test cases</value></data>
+  <data name="Home_NoTestCasesDescription" xml:space="preserve"><value>Import or edit valid test data on the Test data page first.</value></data>
+  <data name="Home_RunFailed" xml:space="preserve"><value>Check could not start</value></data>
+  <data name="Home_ResultSection" xml:space="preserve"><value>Results</value></data>
+  <data name="Home_ResultSummaryFormat" xml:space="preserve"><value>Passed {0}, failed {1}, timed out {2}, invalid data {3}, execution failed {4}, cancelled {5}; total {6:F2}s</value></data>
+  <data name="Home_TotalCases" xml:space="preserve"><value>Test cases:</value></data>
+  <data name="Home_CompletionRate" xml:space="preserve"><value>Completion:</value></data>
+  <data name="Home_PassRate" xml:space="preserve"><value>Pass rate:</value></data>
+  <data name="Home_TotalElapsed" xml:space="preserve"><value>Total</value></data>
+  <data name="Home_DetailSection" xml:space="preserve"><value>Test-case details</value></data>
+  <data name="Home_CaseLabel" xml:space="preserve"><value>Case</value></data>
+  <data name="Home_GroupLabel" xml:space="preserve"><value>Group</value></data>
+  <data name="Home_StatusLabel" xml:space="preserve"><value>Status</value></data>
+  <data name="Home_DiffCountLabel" xml:space="preserve"><value>Different lines</value></data>
+  <data name="Home_TargetLabel" xml:space="preserve"><value>Error source</value></data>
+  <data name="Home_InputLabel" xml:space="preserve"><value>Standard input</value></data>
+  <data name="Home_ExitCodeLabel" xml:space="preserve"><value>Exit code</value></data>
+  <data name="Home_ElapsedLabel" xml:space="preserve"><value>Elapsed</value></data>
+  <data name="Home_DemoOutputLabel" xml:space="preserve"><value>Demo standard output</value></data>
+  <data name="Home_DemoErrorLabel" xml:space="preserve"><value>Demo standard error</value></data>
+  <data name="Home_StudentOutputLabel" xml:space="preserve"><value>Student standard output</value></data>
+  <data name="Home_StudentErrorLabel" xml:space="preserve"><value>Student standard error</value></data>
+  <data name="Result_Passed" xml:space="preserve"><value>Passed</value></data>
+  <data name="Result_Failed" xml:space="preserve"><value>Failed</value></data>
+  <data name="Result_TimedOut" xml:space="preserve"><value>Timed out</value></data>
+  <data name="Result_InvalidTestData" xml:space="preserve"><value>Invalid data</value></data>
+  <data name="Result_ExecutionFailed" xml:space="preserve"><value>Execution failed</value></data>
+  <data name="Result_Cancelled" xml:space="preserve"><value>Cancelled</value></data>
+  <data name="Result_TargetDemo" xml:space="preserve"><value>Demo</value></data>
+  <data name="Result_TargetStudent" xml:space="preserve"><value>Student</value></data>
+
+  <data name="TestData_Import" xml:space="preserve"><value>Import txt/dat</value></data>
+  <data name="TestData_Save" xml:space="preserve"><value>Save</value></data>
+  <data name="TestData_ImportSuccess" xml:space="preserve"><value>Import successful</value></data>
+  <data name="TestData_ImportFailed" xml:space="preserve"><value>Import failed</value></data>
+  <data name="TestData_LoadFailed" xml:space="preserve"><value>Load failed</value></data>
+  <data name="TestData_SaveSuccess" xml:space="preserve"><value>Saved</value></data>
+  <data name="TestData_SaveSuccessDescription" xml:space="preserve"><value>Test data cache has been saved</value></data>
+  <data name="TestData_SaveFailed" xml:space="preserve"><value>Save failed</value></data>
+  <data name="Settings_SaveFailed" xml:space="preserve"><value>Settings could not be saved</value></data>
+  <data name="Settings_SaveFailedDescription" xml:space="preserve"><value>The setting is active for this session but could not be written to disk.</value></data>
+
+  <data name="Compare_Section" xml:space="preserve"><value>Text comparison options</value></data>
+  <data name="Compare_Trim_Title" xml:space="preserve"><value>Whitespace handling (trim)</value></data>
+  <data name="Compare_Trim_Description" xml:space="preserve"><value>Whitespace/Tab rule for each line: none / left / right / all.</value></data>
+  <data name="Compare_Trim_None" xml:space="preserve"><value>none (exact match)</value></data>
+  <data name="Compare_Trim_Left" xml:space="preserve"><value>left (ignore leading whitespace)</value></data>
+  <data name="Compare_Trim_Right" xml:space="preserve"><value>right (ignore trailing whitespace)</value></data>
+  <data name="Compare_Trim_All" xml:space="preserve"><value>all (ignore leading and trailing whitespace)</value></data>
+  <data name="Compare_LineSkip_Title" xml:space="preserve"><value>Skip leading lines (--lineskip)</value></data>
+  <data name="Compare_LineSkip_Description" xml:space="preserve"><value>Range [0..100]. Skip the first s lines in both files before comparison.</value></data>
+  <data name="Compare_LineSkip_Placeholder" xml:space="preserve"><value>Default 0 (example: 5)</value></data>
+  <data name="Compare_LineOffset_Title" xml:space="preserve"><value>Line offset (--lineoffset)</value></data>
+  <data name="Compare_LineOffset_Description" xml:space="preserve"><value>Range [-100..100]. Negative skips file1; positive skips file2.</value></data>
+  <data name="Compare_LineOffset_Placeholder" xml:space="preserve"><value>Default 0 (example: -2 or 3)</value></data>
+  <data name="Compare_IgnoreBlank_Title" xml:space="preserve"><value>Ignore blank lines (--ignore_blank)</value></data>
+  <data name="Compare_IgnoreBlank_Description" xml:space="preserve"><value>When enabled, blank lines remaining after trim are ignored.</value></data>
+  <data name="Compare_LineEnding_Title" xml:space="preserve"><value>Distinguish line endings (--CR_CRLF_not_equal)</value></data>
+  <data name="Compare_LineEnding_Description" xml:space="preserve"><value>When enabled, Windows (CRLF) and Linux (LF) line endings differ.</value></data>
+  <data name="Compare_LineEnding_Strict" xml:space="preserve"><value>Distinguish</value></data>
+  <data name="Compare_LineEnding_Ignore" xml:space="preserve"><value>Ignore difference</value></data>
+  <data name="Compare_MaxDiff_Title" xml:space="preserve"><value>Maximum differing lines (--max_diff)</value></data>
+  <data name="Compare_MaxDiff_Description" xml:space="preserve"><value>Range [0..100]. Stop after m differing lines.</value></data>
+  <data name="Compare_MaxDiff_Placeholder" xml:space="preserve"><value>Default 0 (example: 10)</value></data>
+  <data name="Compare_MaxLine_Title" xml:space="preserve"><value>Maximum compared lines (--max_line)</value></data>
+  <data name="Compare_MaxLine_Description" xml:space="preserve"><value>Range [0..10000]. Stop after comparing x lines.</value></data>
+  <data name="Compare_MaxLine_Placeholder" xml:space="preserve"><value>Default 0 (example: 200)</value></data>
+
+  <data name="FilePicker_DemoTitle" xml:space="preserve"><value>Select Demo EXE</value></data>
+  <data name="FilePicker_StudentTitle" xml:space="preserve"><value>Select EXE to check</value></data>
+  <data name="FilePicker_ExecutableFiles" xml:space="preserve"><value>Executable files</value></data>
+  <data name="FilePicker_TestDataTitle" xml:space="preserve"><value>Select test data file</value></data>
+  <data name="FilePicker_TestDataFiles" xml:space="preserve"><value>Test data files</value></data>
+  <data name="FilePicker_AllFiles" xml:space="preserve"><value>All files</value></data>
+
+  <data name="ColorPicker_Title" xml:space="preserve"><value>Select color</value></data>
+  <data name="ColorPicker_EditColor" xml:space="preserve"><value>Edit color</value></data>
+  <data name="ColorPicker_Hex" xml:space="preserve"><value>Hex</value></data>
+  <data name="ColorPicker_Red" xml:space="preserve"><value>Red</value></data>
+  <data name="ColorPicker_Green" xml:space="preserve"><value>Green</value></data>
+  <data name="ColorPicker_Blue" xml:space="preserve"><value>Blue</value></data>
+
+  <data name="Common_None" xml:space="preserve"><value>None</value></data>
+  <data name="Home_ArgumentsLabel" xml:space="preserve"><value>Command-line arguments</value></data>
+  <data name="TestData_ArgumentsHint" xml:space="preserve"><value>Use # @args: before each case input. Double quotes can wrap arguments containing spaces.</value></data>
+  <data name="TestData_Format_DuplicateArguments" xml:space="preserve"><value>Line {0}: arguments cannot be declared more than once in one case.</value></data>
+  <data name="TestData_Format_UnclosedArgumentQuote" xml:space="preserve"><value>Line {0}: command-line arguments contain an unclosed double quote.</value></data>
+
+  <data name="Home_PreviousCase" xml:space="preserve"><value>Previous</value></data>
+  <data name="Home_NextCase" xml:space="preserve"><value>Next</value></data>
+  <data name="Home_CollapseDetails" xml:space="preserve"><value>Collapse details</value></data>
+  <data name="Home_DemoEncodingLabel" xml:space="preserve"><value>Demo encoding</value></data>
+  <data name="Home_StudentEncodingLabel" xml:space="preserve"><value>Student encoding</value></data>
+  <data name="Home_InputSection" xml:space="preserve"><value>Input data</value></data>
+	<data name="Home_NoInputData" xml:space="preserve"><value>No input data</value></data>
+  <data name="Home_LineDifferences" xml:space="preserve"><value>Line differences</value></data>
+  <data name="Home_InvisibleCharactersNote" xml:space="preserve"><value>Invisible characters other than spaces are shown as single visible characters.</value></data>
+  <data name="Home_DifferenceNumber" xml:space="preserve"><value>Difference</value></data>
+  <data name="Home_FirstDifferenceIndex" xml:space="preserve"><value>First differing character</value></data>
+  <data name="Home_ZeroBased" xml:space="preserve"><value>(zero-based)</value></data>
+  <data name="Home_DifferenceLinePrefix" xml:space="preserve"><value>Line </value></data>
+  <data name="Home_DifferenceLineSuffix" xml:space="preserve"><value>: </value></data>
+  <data name="Home_FirstDifferencePrefix" xml:space="preserve"><value>Difference starts at character </value></data>
+  <data name="Home_FirstDifferenceSuffix" xml:space="preserve"><value> (counting from 0)</value></data>
+  <data name="Home_DemoLine" xml:space="preserve"><value>Demo line</value></data>
+  <data name="Home_StudentLine" xml:space="preserve"><value>Student line</value></data>
+  <data name="Home_EmptyLine" xml:space="preserve"><value>(empty line)</value></data>
+  <data name="Home_FileEnded" xml:space="preserve"><value>(file ended)</value></data>
+  <data name="Home_HexSection" xml:space="preserve"><value>HEX raw bytes</value></data>
+  <data name="Home_RawBytesNote" xml:space="preserve"><value>16 bytes per row; &lt;EOF&gt; marks where the content ends and occupies no byte itself.</value></data>
+  <data name="Home_RunInformation" xml:space="preserve"><value>Full run information</value></data>
+  <data name="Difference_ContentMismatch" xml:space="preserve"><value>Line content differs</value></data>
+  <data name="Difference_LineEndingMismatch" xml:space="preserve"><value>Line endings differ</value></data>
+  <data name="Difference_File1HasExtraCharacters" xml:space="preserve"><value>Demo has extra content</value></data>
+  <data name="Difference_File2HasExtraCharacters" xml:space="preserve"><value>Student output has extra content</value></data>
+  <data name="Difference_File1Ended" xml:space="preserve"><value>Demo ended while student output continues</value></data>
+  <data name="Difference_File2Ended" xml:space="preserve"><value>Student output ended while Demo continues</value></data>
+  <data name="ResultDescription_Passed" xml:space="preserve"><value>Demo and student output match.</value></data>
+  <data name="ResultDescription_Failed" xml:space="preserve"><value>Student output differs; review the line details below.</value></data>
+	<data name="ResultDescription_TimedOut" xml:space="preserve"><value>The test session was cancelled because the student program exceeded the time limit.</value></data>
+  <data name="ResultDescription_InvalidTestData" xml:space="preserve"><value>The test session was cancelled because the test data was invalid; check this input.</value></data>
+  <data name="ResultDescription_ExecutionFailed" xml:space="preserve"><value>A program could not start or exceeded the output limit; review full run information.</value></data>
+	<data name="ResultDescription_Cancelled" xml:space="preserve"><value>The test session was cancelled.</value></data>
+  <data name="ComparisonError_EmptyText" xml:space="preserve"><value>{0} output is empty and cannot be compared.</value></data>
+  <data name="ComparisonError_MixedLineEndings" xml:space="preserve"><value>{0} output mixes CR, LF, or CRLF line endings.</value></data>
+  <data name="TestData_Examples_Button" xml:space="preserve"><value>Examples</value></data>
+  <data name="TestData_Examples_Title" xml:space="preserve"><value>Test data examples</value></data>
+  <data name="TestData_Examples_GeneralTitle" xml:space="preserve"><value>Basic rules</value></data>
+  <data name="TestData_Examples_GeneralDescription" xml:space="preserve"><value>Each [group name] starts one test case. Names such as [1], [01], and [3-b3-01] are all valid; case numbers follow text order only. Ordinary text after the group header is passed to the program unchanged, while ordinary # comments are ignored. Select Save after editing to update the cache.</value></data>
+  <data name="TestData_Examples_3B3Title" xml:space="preserve"><value>Example 1: standard input</value></data>
+  <data name="TestData_Examples_3B3ExampleNote" xml:space="preserve"><value>(using 3-b3 as an example)</value></data>
+  <data name="TestData_Examples_3B3Description" xml:space="preserve"><value>The program reads one floating-point number per run, so place one input value on the line below each group header. The next group header ends the previous case and starts another.</value></data>
+  <data name="TestData_Examples_3B3Note" xml:space="preserve"><value>Blank lines are preserved as input. Add one only when the program really needs a blank line to simulate Enter, not merely for visual spacing.</value></data>
+  <data name="TestData_Examples_TcTitle" xml:space="preserve"><value>Example 2: command-line arguments</value></data>
+  <data name="TestData_Examples_TcDescription" xml:space="preserve"><value>When txt_compare needs no standard input, put its full command line in # @args: after the group header. Paths containing spaces must be quoted; the directive itself is not passed to stdin.</value></data>
+  <data name="TestData_Examples_TcNote" xml:space="preserve"><value>The two cases above use normal and detailed display modes. Replace the sample paths with real files; Demo and student programs always receive the same arguments.</value></data>
 </root>

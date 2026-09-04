@@ -1,0 +1,101 @@
+<ui:FluentWindow
+  x:Class="HomeworkChecker.UI.Views.Windows.TestDataExamplesWindow"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:res="clr-namespace:HomeworkChecker.UI.Resources"
+  xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+  Title="{Binding [TestData_Examples_Title], Source={x:Static res:Translations.Current}}"
+  Width="820"
+  Height="620"
+  MinWidth="680"
+  MinHeight="500"
+  Background="{DynamicResource ApplicationBackgroundBrush}"
+  Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+  ExtendsContentIntoTitleBar="True"
+  ResizeMode="CanResize"
+  WindowBackdropType="Mica"
+  WindowCornerPreference="Round"
+  WindowStartupLocation="CenterOwner">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="48" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <ui:TitleBar
+            Grid.Row="0"
+            Title="{Binding [TestData_Examples_Title], Source={x:Static res:Translations.Current}}"
+            ShowMinimize="False"
+            ShowMaximize="False"
+            ShowHelp="False"
+            ShowClose="True"
+            CanMaximize="False" />
+
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+            <StackPanel Margin="28,16,28,28">
+                <TextBlock Text="{Binding [TestData_Examples_GeneralTitle], Source={x:Static res:Translations.Current}}"
+                           FontSize="20"
+                           FontWeight="SemiBold"
+                           Margin="0,0,0,8" />
+                <TextBlock Text="{Binding [TestData_Examples_GeneralDescription], Source={x:Static res:Translations.Current}}"
+                           Foreground="{DynamicResource TextFillColorSecondaryBrush}"
+                           TextWrapping="Wrap"
+                           LineHeight="24" />
+
+                <Separator Margin="0,20" />
+
+                <TextBlock Text="{Binding [TestData_Examples_3B3Title], Source={x:Static res:Translations.Current}}"
+                           FontSize="18"
+                           FontWeight="SemiBold"
+                           Margin="0,0,0,4" />
+                <TextBlock Text="{Binding [TestData_Examples_3B3ExampleNote], Source={x:Static res:Translations.Current}}"
+                           Foreground="{DynamicResource TextFillColorSecondaryBrush}"
+                           FontStyle="Italic"
+                           Margin="0,0,0,8" />
+                <TextBlock Text="{Binding [TestData_Examples_3B3Description], Source={x:Static res:Translations.Current}}"
+                           TextWrapping="Wrap"
+                           LineHeight="23"
+                           Margin="0,0,0,10" />
+                <Border Background="{DynamicResource ControlFillColorSecondaryBrush}"
+                        BorderBrush="{DynamicResource ControlStrokeColorDefaultBrush}"
+                        BorderThickness="1"
+                        CornerRadius="6"
+                        Padding="14">
+                    <TextBlock FontFamily="Cascadia Mono, Consolas"
+                               Text="[3-b3-01]&#x0a;9999999999.99&#x0a;[3-b3-02]&#x0a;2501200350.03" />
+                </Border>
+                <TextBlock Text="{Binding [TestData_Examples_3B3Note], Source={x:Static res:Translations.Current}}"
+                           Foreground="{DynamicResource TextFillColorSecondaryBrush}"
+                           TextWrapping="Wrap"
+                           LineHeight="23"
+                           Margin="0,10,0,0" />
+
+                <Separator Margin="0,20" />
+
+                <TextBlock Text="{Binding [TestData_Examples_TcTitle], Source={x:Static res:Translations.Current}}"
+                           FontSize="18"
+                           FontWeight="SemiBold"
+                           Margin="0,0,0,8" />
+                <TextBlock Text="{Binding [TestData_Examples_TcDescription], Source={x:Static res:Translations.Current}}"
+                           TextWrapping="Wrap"
+                           LineHeight="23"
+                           Margin="0,0,0,10" />
+                <Border Background="{DynamicResource ControlFillColorSecondaryBrush}"
+                        BorderBrush="{DynamicResource ControlStrokeColorDefaultBrush}"
+                        BorderThickness="1"
+                        CornerRadius="6"
+                        Padding="14">
+                    <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled">
+                        <TextBlock FontFamily="Cascadia Mono, Consolas"
+                                   Text="[tc-normal]&#x0a;# @args: --file1 &quot;D:\tc data\expected.txt&quot; --file2 &quot;D:\tc data\actual.txt&quot; --display normal&#x0a;[tc-detailed]&#x0a;# @args: --file1 &quot;D:\tc data\expected.txt&quot; --file2 &quot;D:\tc data\actual.txt&quot; --display detailed" />
+                    </ScrollViewer>
+                </Border>
+                <TextBlock Text="{Binding [TestData_Examples_TcNote], Source={x:Static res:Translations.Current}}"
+                           Foreground="{DynamicResource TextFillColorSecondaryBrush}"
+                           TextWrapping="Wrap"
+                           LineHeight="23"
+                           Margin="0,10,0,0" />
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</ui:FluentWindow>

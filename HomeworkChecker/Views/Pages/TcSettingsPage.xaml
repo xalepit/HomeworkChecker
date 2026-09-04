@@ -4,9 +4,10 @@
   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
   xmlns:local="clr-namespace:HomeworkChecker.UI.Views.Pages"
+  xmlns:coreModels="clr-namespace:HomeworkChecker.Core.Models;assembly=HomeworkChecker.Core"
+  xmlns:res="clr-namespace:HomeworkChecker.UI.Resources"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
-  Title="文本比较配置（txt_compare）"
   d:DataContext="{d:DesignInstance local:TcSettingsPage,
                                      IsDesignTimeCreatable=False}"
   d:DesignHeight="450"
@@ -18,7 +19,7 @@
 >
     <StackPanel>
 
-        <ui:TextBlock Text="文本比较参数" FontTypography="Subtitle" Margin="0,10,0,10" />
+        <ui:TextBlock Text="{Binding [Compare_Section], Source={x:Static res:Translations.Current}}" FontTypography="Subtitle" Margin="0,10,0,10" />
 
         <!-- trim -->
         <ui:Card Margin="0,0,0,6">
@@ -31,16 +32,16 @@
 
                 <ui:SymbolIcon Grid.Column="0" Symbol="TextGrammarWand24" Margin="0,0,15,0" />
                 <StackPanel Grid.Column="1">
-                    <ui:TextBlock Text="空白处理方式（trim）" FontTypography="Body" Appearance="Primary" />
-                    <ui:TextBlock Text="指定每行对空格/Tab的忽略规则：none / left / right / all。" FontTypography="Caption" Appearance="Secondary" />
+                    <ui:TextBlock Text="{Binding [Compare_Trim_Title], Source={x:Static res:Translations.Current}}" FontTypography="Body" Appearance="Primary" />
+                    <ui:TextBlock Text="{Binding [Compare_Trim_Description], Source={x:Static res:Translations.Current}}" FontTypography="Caption" Appearance="Secondary" />
                 </StackPanel>
                 <ComboBox Grid.Column="2"
-                      SelectedValue="{Binding ViewModel.CompareSettings.TrimMode, Mode=TwoWay}"
+                      SelectedValue="{Binding ViewModel.TrimMode, Mode=TwoWay}"
                       SelectedValuePath="Tag">
-                    <ComboBoxItem Content="none（严格匹配）" Tag="none" />
-                    <ComboBoxItem Content="left（忽略行首空白）" Tag="left" />
-                    <ComboBoxItem Content="right（忽略行尾空白）" Tag="right" />
-                    <ComboBoxItem Content="all（忽略首尾空白）" Tag="all" />
+                    <ComboBoxItem Content="{Binding [Compare_Trim_None], Source={x:Static res:Translations.Current}}" Tag="{x:Static coreModels:TrimType.None}" />
+                    <ComboBoxItem Content="{Binding [Compare_Trim_Left], Source={x:Static res:Translations.Current}}" Tag="{x:Static coreModels:TrimType.Left}" />
+                    <ComboBoxItem Content="{Binding [Compare_Trim_Right], Source={x:Static res:Translations.Current}}" Tag="{x:Static coreModels:TrimType.Right}" />
+                    <ComboBoxItem Content="{Binding [Compare_Trim_All], Source={x:Static res:Translations.Current}}" Tag="{x:Static coreModels:TrimType.All}" />
                 </ComboBox>
             </Grid>
         </ui:Card>
@@ -56,12 +57,18 @@
 
                 <ui:SymbolIcon Grid.Column="0" Symbol="SkipForwardTab24" Margin="0,0,15,0" />
                 <StackPanel Grid.Column="1">
-                    <ui:TextBlock Text="跳过前置行数（--lineskip）" FontTypography="Body" Appearance="Primary" />
-                    <ui:TextBlock Text="范围 [0..100]。两个文件同时跳过前 s 行再开始比较。" FontTypography="Caption" Appearance="Secondary" />
+                    <ui:TextBlock Text="{Binding [Compare_LineSkip_Title], Source={x:Static res:Translations.Current}}" FontTypography="Body" Appearance="Primary" />
+                    <ui:TextBlock Text="{Binding [Compare_LineSkip_Description], Source={x:Static res:Translations.Current}}" FontTypography="Caption" Appearance="Secondary" />
                 </StackPanel>
-                <ui:TextBox Grid.Column="2"
-                        PlaceholderText="默认 0（例如：5）"
-                        Text="{Binding ViewModel.CompareSettings.LineSkip, Mode=TwoWay}" />
+                <ui:NumberBox Grid.Column="2"
+                        Minimum="0"
+                        Maximum="100"
+                        MaxDecimalPlaces="0"
+                        SmallChange="1"
+                        SpinButtonPlacementMode="Inline"
+                        ValidationMode="InvalidInputOverwritten"
+                        ClearButtonEnabled="False"
+                        Value="{Binding ViewModel.LineSkip, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
             </Grid>
         </ui:Card>
 
@@ -76,12 +83,18 @@
 
                 <ui:SymbolIcon Grid.Column="0" Symbol="ArrowSwap24" Margin="0,0,15,0" />
                 <StackPanel Grid.Column="1">
-                    <ui:TextBlock Text="错位行偏移（--lineoffset）" FontTypography="Body" Appearance="Primary" />
-                    <ui:TextBlock Text="范围 [-100..100]。负数忽略 file1 前 n 行，正数忽略 file2 前 n 行。" FontTypography="Caption" Appearance="Secondary" />
+                    <ui:TextBlock Text="{Binding [Compare_LineOffset_Title], Source={x:Static res:Translations.Current}}" FontTypography="Body" Appearance="Primary" />
+                    <ui:TextBlock Text="{Binding [Compare_LineOffset_Description], Source={x:Static res:Translations.Current}}" FontTypography="Caption" Appearance="Secondary" />
                 </StackPanel>
-                <ui:TextBox Grid.Column="2"
-                        PlaceholderText="默认 0（例如：-2 或 3）"
-                        Text="{Binding ViewModel.CompareSettings.LineOffset, Mode=TwoWay}" />
+                <ui:NumberBox Grid.Column="2"
+                        Minimum="-100"
+                        Maximum="100"
+                        MaxDecimalPlaces="0"
+                        SmallChange="1"
+                        SpinButtonPlacementMode="Inline"
+                        ValidationMode="InvalidInputOverwritten"
+                        ClearButtonEnabled="False"
+                        Value="{Binding ViewModel.LineOffset, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
             </Grid>
         </ui:Card>
 
@@ -96,13 +109,13 @@
 
                 <ui:SymbolIcon Grid.Column="0" Symbol="Eraser24" Margin="0,0,15,0" />
                 <StackPanel Grid.Column="1">
-                    <ui:TextBlock Text="忽略空行（--ignore_blank）" FontTypography="Body" Appearance="Primary" />
-                    <ui:TextBlock Text="开启后，忽略 trim 处理后的所有空行。" FontTypography="Caption" Appearance="Secondary" />
+                    <ui:TextBlock Text="{Binding [Compare_IgnoreBlank_Title], Source={x:Static res:Translations.Current}}" FontTypography="Body" Appearance="Primary" />
+                    <ui:TextBlock Text="{Binding [Compare_IgnoreBlank_Description], Source={x:Static res:Translations.Current}}" FontTypography="Caption" Appearance="Secondary" />
                 </StackPanel>
-                <ui:ToggleSwitch Grid.Column="2"
-                             OnContent="开启"
-                             OffContent="关闭"
-                             IsChecked="{Binding ViewModel.CompareSettings.IgnoreBlank, Mode=TwoWay}" />
+                <StackPanel Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Center">
+                    <ui:TextBlock Text="{Binding ViewModel.IgnoreBlankStateText}" Margin="0,0,12,0" VerticalAlignment="Center" />
+                    <ui:ToggleSwitch IsChecked="{Binding ViewModel.IgnoreBlank, Mode=TwoWay}" />
+                </StackPanel>
             </Grid>
         </ui:Card>
 
@@ -117,13 +130,13 @@
 
                 <ui:SymbolIcon Grid.Column="0" Symbol="TextWrap24" Margin="0,0,15,0" />
                 <StackPanel Grid.Column="1">
-                    <ui:TextBlock Text="严格区分换行符（--CR_CRLF_not_equal）" FontTypography="Body" Appearance="Primary" />
-                    <ui:TextBlock Text="开启后，Windows（CRLF）与 Linux（LF）换行差异会判定为不相等。" FontTypography="Caption" Appearance="Secondary" />
+                    <ui:TextBlock Text="{Binding [Compare_LineEnding_Title], Source={x:Static res:Translations.Current}}" FontTypography="Body" Appearance="Primary" />
+                    <ui:TextBlock Text="{Binding [Compare_LineEnding_Description], Source={x:Static res:Translations.Current}}" FontTypography="Caption" Appearance="Secondary" />
                 </StackPanel>
-                <ui:ToggleSwitch Grid.Column="2"
-                             OnContent="严格区分"
-                             OffContent="忽略差异"
-                             IsChecked="{Binding ViewModel.CompareSettings.CrCrLfNotEqual, Mode=TwoWay}" />
+                <StackPanel Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Center">
+                    <ui:TextBlock Text="{Binding ViewModel.LineEndingStateText}" Margin="0,0,12,0" VerticalAlignment="Center" />
+                    <ui:ToggleSwitch IsChecked="{Binding ViewModel.CrCrLfNotEqual, Mode=TwoWay}" />
+                </StackPanel>
             </Grid>
         </ui:Card>
 
@@ -138,12 +151,18 @@
 
                 <ui:SymbolIcon Grid.Column="0" Symbol="TextGrammarDismiss24" Margin="0,0,15,0" />
                 <StackPanel Grid.Column="1">
-                    <ui:TextBlock Text="最大差异行数（--max_diff）" FontTypography="Body" Appearance="Primary" />
-                    <ui:TextBlock Text="范围 [0..100]。达到 m 行差异后提前停止比较。" FontTypography="Caption" Appearance="Secondary" />
+                    <ui:TextBlock Text="{Binding [Compare_MaxDiff_Title], Source={x:Static res:Translations.Current}}" FontTypography="Body" Appearance="Primary" />
+                    <ui:TextBlock Text="{Binding [Compare_MaxDiff_Description], Source={x:Static res:Translations.Current}}" FontTypography="Caption" Appearance="Secondary" />
                 </StackPanel>
-                <ui:TextBox Grid.Column="2"
-                        PlaceholderText="默认 0（例如：10）"
-                        Text="{Binding ViewModel.CompareSettings.MaxDiffCount, Mode=TwoWay}" />
+                <ui:NumberBox Grid.Column="2"
+                        Minimum="0"
+                        Maximum="100"
+                        MaxDecimalPlaces="0"
+                        SmallChange="1"
+                        SpinButtonPlacementMode="Inline"
+                        ValidationMode="InvalidInputOverwritten"
+                        ClearButtonEnabled="False"
+                        Value="{Binding ViewModel.MaxDiffCount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
             </Grid>
         </ui:Card>
 
@@ -158,12 +177,18 @@
 
                 <ui:SymbolIcon Grid.Column="0" Symbol="Line24" Margin="0,0,15,0" />
                 <StackPanel Grid.Column="1">
-                    <ui:TextBlock Text="最大比较行数（--max_line）" FontTypography="Body" Appearance="Primary" />
-                    <ui:TextBlock Text="范围 [0..10000]。比较到 x 行后停止，不再继续。" FontTypography="Caption" Appearance="Secondary" />
+                    <ui:TextBlock Text="{Binding [Compare_MaxLine_Title], Source={x:Static res:Translations.Current}}" FontTypography="Body" Appearance="Primary" />
+                    <ui:TextBlock Text="{Binding [Compare_MaxLine_Description], Source={x:Static res:Translations.Current}}" FontTypography="Caption" Appearance="Secondary" />
                 </StackPanel>
-                <ui:TextBox Grid.Column="2"
-                        PlaceholderText="默认 0（例如：200）"
-                        Text="{Binding ViewModel.CompareSettings.MaxLineCount, Mode=TwoWay}" />
+                <ui:NumberBox Grid.Column="2"
+                        Minimum="0"
+                        Maximum="10000"
+                        MaxDecimalPlaces="0"
+                        SmallChange="1"
+                        SpinButtonPlacementMode="Inline"
+                        ValidationMode="InvalidInputOverwritten"
+                        ClearButtonEnabled="False"
+                        Value="{Binding ViewModel.MaxLineCount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
             </Grid>
         </ui:Card>
 

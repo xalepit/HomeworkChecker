@@ -1,0 +1,128 @@
+<UserControl
+    x:Class="HomeworkChecker.UI.Views.Dialogs.AccentColorPickerView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:res="clr-namespace:HomeworkChecker.UI.Resources"
+    MinWidth="700">
+    <Grid Margin="0,4,0,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="300" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="76" />
+            </Grid.ColumnDefinitions>
+
+            <Border x:Name="SpectrumBorder"
+                    Grid.Column="0"
+                    Margin="0,0,18,0"
+                    Background="{Binding SpectrumBaseBrush}"
+                    CornerRadius="6"
+                    ClipToBounds="True"
+                    SizeChanged="OnSpectrumSizeChanged">
+                <Grid>
+                    <Rectangle>
+                        <Rectangle.Fill>
+                            <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                                <GradientStop Offset="0" Color="White" />
+                                <GradientStop Offset="1" Color="#00FFFFFF" />
+                            </LinearGradientBrush>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <Rectangle>
+                        <Rectangle.Fill>
+                            <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                <GradientStop Offset="0" Color="#00000000" />
+                                <GradientStop Offset="1" Color="Black" />
+                            </LinearGradientBrush>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <Canvas x:Name="SpectrumCanvas"
+                            Background="Transparent"
+                            MouseLeftButtonDown="OnSpectrumMouseLeftButtonDown"
+                            MouseLeftButtonUp="OnSpectrumMouseLeftButtonUp"
+                            MouseMove="OnSpectrumMouseMove">
+                        <Ellipse x:Name="SpectrumIndicator"
+                                 Width="18"
+                                 Height="18"
+                                 Stroke="White"
+                                 StrokeThickness="3"
+                                 Fill="Transparent" />
+                    </Canvas>
+                </Grid>
+            </Border>
+
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Border Grid.Row="0" Background="{Binding SelectedColorBrush}" CornerRadius="6,6,0,0" />
+                <Border Grid.Row="1" Background="{Binding OriginalColorBrush}" CornerRadius="0,0,6,6" />
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Row="1" Margin="0,18,0,18">
+            <Border Height="8" CornerRadius="4" VerticalAlignment="Center">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                        <GradientStop Offset="0" Color="#FFFF0000" />
+                        <GradientStop Offset="0.1667" Color="#FFFFFF00" />
+                        <GradientStop Offset="0.3333" Color="#FF00FF00" />
+                        <GradientStop Offset="0.5" Color="#FF00FFFF" />
+                        <GradientStop Offset="0.6667" Color="#FF0000FF" />
+                        <GradientStop Offset="0.8333" Color="#FFFF00FF" />
+                        <GradientStop Offset="1" Color="#FFFF0000" />
+                    </LinearGradientBrush>
+                </Border.Background>
+            </Border>
+            <Slider Minimum="0"
+                    Maximum="359.999"
+                    Background="Transparent"
+                    Value="{Binding Hue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+        </Grid>
+
+        <StackPanel Grid.Row="2">
+            <TextBlock Text="{Binding [ColorPicker_EditColor], Source={x:Static res:Translations.Current}}"
+                       FontSize="18"
+                       FontWeight="SemiBold"
+                       Margin="0,0,0,10" />
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="14" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="14" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="14" />
+                    <ColumnDefinition Width="1.35*" />
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="0">
+                    <TextBlock Text="{Binding [ColorPicker_Red], Source={x:Static res:Translations.Current}}" Margin="0,0,0,6" />
+                    <TextBox Text="{Binding Red, Mode=TwoWay, UpdateSourceTrigger=LostFocus}" />
+                </StackPanel>
+
+                <StackPanel Grid.Column="2">
+                    <TextBlock Text="{Binding [ColorPicker_Green], Source={x:Static res:Translations.Current}}" Margin="0,0,0,6" />
+                    <TextBox Text="{Binding Green, Mode=TwoWay, UpdateSourceTrigger=LostFocus}" />
+                </StackPanel>
+
+                <StackPanel Grid.Column="4">
+                    <TextBlock Text="{Binding [ColorPicker_Blue], Source={x:Static res:Translations.Current}}" Margin="0,0,0,6" />
+                    <TextBox Text="{Binding Blue, Mode=TwoWay, UpdateSourceTrigger=LostFocus}" />
+                </StackPanel>
+
+                <StackPanel Grid.Column="6">
+                    <TextBlock Text="{Binding [ColorPicker_Hex], Source={x:Static res:Translations.Current}}" Margin="0,0,0,6" />
+                    <TextBox Text="{Binding HexColor, Mode=TwoWay, UpdateSourceTrigger=LostFocus}" />
+                </StackPanel>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</UserControl>

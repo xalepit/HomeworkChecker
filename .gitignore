@@ -3,6 +3,14 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+# HomeworkChecker 本地参考资料与已废弃工程
+/reference/
+/docs/
+/TxtCompareAndOtherStuffs/
+
+# 异常宿主环境可能在仓库根目录生成的系统缓存
+/%SystemDrive%/
+
 # User-specific files
 *.rsuser
 *.suo

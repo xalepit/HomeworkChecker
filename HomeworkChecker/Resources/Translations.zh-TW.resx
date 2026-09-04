@@ -24,6 +24,13 @@
   <data name="Settings_Language_Title" xml:space="preserve"><value>語言</value></data>
   <data name="Settings_Language_Description" xml:space="preserve"><value>設定軟體介面語言</value></data>
 
+  <data name="Settings_General_Section" xml:space="preserve"><value>通用設定</value></data>
+  <data name="Settings_Timeout_Title" xml:space="preserve"><value>單次執行逾時</value></data>
+  <data name="Settings_Timeout_Description" xml:space="preserve"><value>每個測試案例執行 Demo 或待檢測程式的最長時間（3–10 秒）</value></data>
+  <data name="Settings_Timeout_Unit" xml:space="preserve"><value>秒</value></data>
+  <data name="Settings_Parallelism_Title" xml:space="preserve"><value>平行測試數</value></data>
+  <data name="Settings_Parallelism_Description" xml:space="preserve"><value>同時執行的測試案例流程數量（1–8）</value></data>
+
   <data name="Settings_About_Section" xml:space="preserve"><value>關於</value></data>
   <data name="Settings_Help_Title" xml:space="preserve"><value>幫助</value></data>
   <data name="Settings_Help_Description" xml:space="preserve"><value>了解有關...的使用方法</value></data>
@@ -37,6 +44,165 @@
   <data name="Settings_About_Description" xml:space="preserve"><value>版權所有...</value></data>
   <data name="Settings_About_CheckUpdate" xml:space="preserve"><value>檢查更新</value></data>
 
-  <data name="Snackbar_Saved_Title" xml:space="preserve"><value>修改成功</value></data>
-  <data name="Snackbar_Restart_Message" xml:space="preserve"><value>重新啟動後設定生效</value></data>
+  <data name="Navigation_Home" xml:space="preserve"><value>首頁</value></data>
+  <data name="Navigation_TestData" xml:space="preserve"><value>測試資料</value></data>
+  <data name="Navigation_CompareSettings" xml:space="preserve"><value>文字比較設定</value></data>
+  <data name="Navigation_Settings" xml:space="preserve"><value>設定</value></data>
+  <data name="Page_Home" xml:space="preserve"><value>首頁</value></data>
+  <data name="Page_TestData" xml:space="preserve"><value>測試資料</value></data>
+  <data name="Page_CompareSettings" xml:space="preserve"><value>文字比較設定</value></data>
+  <data name="Page_Settings" xml:space="preserve"><value>設定</value></data>
+  <data name="Common_Search" xml:space="preserve"><value>搜尋</value></data>
+  <data name="Common_SelectFile" xml:space="preserve"><value>選擇檔案</value></data>
+  <data name="Common_StartCheck" xml:space="preserve"><value>開始檢測</value></data>
+  <data name="Common_On" xml:space="preserve"><value>開啟</value></data>
+  <data name="Common_Off" xml:space="preserve"><value>關閉</value></data>
+  <data name="Common_Confirm" xml:space="preserve"><value>確認</value></data>
+  <data name="Common_Cancel" xml:space="preserve"><value>取消</value></data>
+
+  <data name="Home_ExecutableSection" xml:space="preserve"><value>選擇 exe 檔案</value></data>
+  <data name="Home_Demo_Title" xml:space="preserve"><value>請選擇 Demo exe</value></data>
+  <data name="Home_Demo_Description" xml:space="preserve"><value>老師提供的範例程式</value></data>
+  <data name="Home_Student_Title" xml:space="preserve"><value>請選擇待檢測 exe</value></data>
+  <data name="Home_Student_Description" xml:space="preserve"><value>你自己編譯的作業程式</value></data>
+  <data name="Home_CancelCheck" xml:space="preserve"><value>取消檢測</value></data>
+  <data name="Home_ProgressFormat" xml:space="preserve"><value>已完成 {0} / {1}</value></data>
+  <data name="Home_PathRequired" xml:space="preserve"><value>請選擇 Demo 與待檢測執行檔。</value></data>
+  <data name="Home_PathMissingFormat" xml:space="preserve"><value>檔案不存在：{0}</value></data>
+  <data name="Home_NoTestCases" xml:space="preserve"><value>沒有測試案例</value></data>
+  <data name="Home_NoTestCasesDescription" xml:space="preserve"><value>請先在測試資料頁面匯入或編輯有效資料。</value></data>
+  <data name="Home_RunFailed" xml:space="preserve"><value>無法開始檢測</value></data>
+  <data name="Home_ResultSection" xml:space="preserve"><value>檢測結果</value></data>
+  <data name="Home_ResultSummaryFormat" xml:space="preserve"><value>通過 {0}，未通過 {1}，逾時 {2}，資料異常 {3}，執行失敗 {4}，已取消 {5}；總耗時 {6:F2} 秒</value></data>
+  <data name="Home_TotalCases" xml:space="preserve"><value>測試案例數：</value></data>
+  <data name="Home_CompletionRate" xml:space="preserve"><value>完成率：</value></data>
+  <data name="Home_PassRate" xml:space="preserve"><value>通過率：</value></data>
+  <data name="Home_TotalElapsed" xml:space="preserve"><value>總耗時</value></data>
+  <data name="Home_DetailSection" xml:space="preserve"><value>案例詳情</value></data>
+  <data name="Home_CaseLabel" xml:space="preserve"><value>案例</value></data>
+  <data name="Home_GroupLabel" xml:space="preserve"><value>組名</value></data>
+  <data name="Home_StatusLabel" xml:space="preserve"><value>狀態</value></data>
+  <data name="Home_DiffCountLabel" xml:space="preserve"><value>差異行數</value></data>
+  <data name="Home_TargetLabel" xml:space="preserve"><value>錯誤來源</value></data>
+  <data name="Home_InputLabel" xml:space="preserve"><value>標準輸入</value></data>
+  <data name="Home_ExitCodeLabel" xml:space="preserve"><value>結束碼</value></data>
+  <data name="Home_ElapsedLabel" xml:space="preserve"><value>耗時</value></data>
+  <data name="Home_DemoOutputLabel" xml:space="preserve"><value>Demo 標準輸出</value></data>
+  <data name="Home_DemoErrorLabel" xml:space="preserve"><value>Demo 標準錯誤</value></data>
+  <data name="Home_StudentOutputLabel" xml:space="preserve"><value>學生程式標準輸出</value></data>
+  <data name="Home_StudentErrorLabel" xml:space="preserve"><value>學生程式標準錯誤</value></data>
+  <data name="Result_Passed" xml:space="preserve"><value>通過</value></data>
+  <data name="Result_Failed" xml:space="preserve"><value>未通過</value></data>
+  <data name="Result_TimedOut" xml:space="preserve"><value>逾時</value></data>
+  <data name="Result_InvalidTestData" xml:space="preserve"><value>資料異常</value></data>
+  <data name="Result_ExecutionFailed" xml:space="preserve"><value>執行失敗</value></data>
+  <data name="Result_Cancelled" xml:space="preserve"><value>已取消</value></data>
+  <data name="Result_TargetDemo" xml:space="preserve"><value>Demo</value></data>
+  <data name="Result_TargetStudent" xml:space="preserve"><value>學生程式</value></data>
+
+  <data name="TestData_Import" xml:space="preserve"><value>匯入 txt/dat</value></data>
+  <data name="TestData_Save" xml:space="preserve"><value>儲存</value></data>
+  <data name="TestData_ImportSuccess" xml:space="preserve"><value>匯入成功</value></data>
+  <data name="TestData_ImportFailed" xml:space="preserve"><value>匯入失敗</value></data>
+  <data name="TestData_LoadFailed" xml:space="preserve"><value>讀取失敗</value></data>
+  <data name="TestData_SaveSuccess" xml:space="preserve"><value>儲存成功</value></data>
+  <data name="TestData_SaveSuccessDescription" xml:space="preserve"><value>已儲存測試資料快取</value></data>
+  <data name="TestData_SaveFailed" xml:space="preserve"><value>儲存失敗</value></data>
+  <data name="Settings_SaveFailed" xml:space="preserve"><value>設定儲存失敗</value></data>
+  <data name="Settings_SaveFailedDescription" xml:space="preserve"><value>設定已在本次工作階段生效，但無法寫入磁碟。</value></data>
+
+  <data name="Compare_Section" xml:space="preserve"><value>文字比較參數</value></data>
+  <data name="Compare_Trim_Title" xml:space="preserve"><value>空白處理方式（trim）</value></data>
+  <data name="Compare_Trim_Description" xml:space="preserve"><value>指定每行對空格/Tab 的忽略規則：none / left / right / all。</value></data>
+  <data name="Compare_Trim_None" xml:space="preserve"><value>none（嚴格比對）</value></data>
+  <data name="Compare_Trim_Left" xml:space="preserve"><value>left（忽略行首空白）</value></data>
+  <data name="Compare_Trim_Right" xml:space="preserve"><value>right（忽略行尾空白）</value></data>
+  <data name="Compare_Trim_All" xml:space="preserve"><value>all（忽略首尾空白）</value></data>
+  <data name="Compare_LineSkip_Title" xml:space="preserve"><value>跳過前置行數（--lineskip）</value></data>
+  <data name="Compare_LineSkip_Description" xml:space="preserve"><value>範圍 [0..100]。兩個檔案同時跳過前 s 行再開始比較。</value></data>
+  <data name="Compare_LineSkip_Placeholder" xml:space="preserve"><value>預設 0（例如：5）</value></data>
+  <data name="Compare_LineOffset_Title" xml:space="preserve"><value>錯位行偏移（--lineoffset）</value></data>
+  <data name="Compare_LineOffset_Description" xml:space="preserve"><value>範圍 [-100..100]。負數忽略 file1 前 n 行，正數忽略 file2 前 n 行。</value></data>
+  <data name="Compare_LineOffset_Placeholder" xml:space="preserve"><value>預設 0（例如：-2 或 3）</value></data>
+  <data name="Compare_IgnoreBlank_Title" xml:space="preserve"><value>忽略空行（--ignore_blank）</value></data>
+  <data name="Compare_IgnoreBlank_Description" xml:space="preserve"><value>開啟後，忽略 trim 處理後的所有空行。</value></data>
+  <data name="Compare_LineEnding_Title" xml:space="preserve"><value>嚴格區分換行符號（--CR_CRLF_not_equal）</value></data>
+  <data name="Compare_LineEnding_Description" xml:space="preserve"><value>開啟後，Windows（CRLF）與 Linux（LF）換行差異會判定為不相等。</value></data>
+  <data name="Compare_LineEnding_Strict" xml:space="preserve"><value>嚴格區分</value></data>
+  <data name="Compare_LineEnding_Ignore" xml:space="preserve"><value>忽略差異</value></data>
+  <data name="Compare_MaxDiff_Title" xml:space="preserve"><value>最大差異行數（--max_diff）</value></data>
+  <data name="Compare_MaxDiff_Description" xml:space="preserve"><value>範圍 [0..100]。達到 m 行差異後提前停止比較。</value></data>
+  <data name="Compare_MaxDiff_Placeholder" xml:space="preserve"><value>預設 0（例如：10）</value></data>
+  <data name="Compare_MaxLine_Title" xml:space="preserve"><value>最大比較行數（--max_line）</value></data>
+  <data name="Compare_MaxLine_Description" xml:space="preserve"><value>範圍 [0..10000]。比較到 x 行後停止，不再繼續。</value></data>
+  <data name="Compare_MaxLine_Placeholder" xml:space="preserve"><value>預設 0（例如：200）</value></data>
+
+  <data name="FilePicker_DemoTitle" xml:space="preserve"><value>選擇 Demo EXE</value></data>
+  <data name="FilePicker_StudentTitle" xml:space="preserve"><value>選擇待檢測 EXE</value></data>
+  <data name="FilePicker_ExecutableFiles" xml:space="preserve"><value>可執行檔案</value></data>
+  <data name="FilePicker_TestDataTitle" xml:space="preserve"><value>選擇測試資料檔案</value></data>
+  <data name="FilePicker_TestDataFiles" xml:space="preserve"><value>測試資料檔案</value></data>
+  <data name="FilePicker_AllFiles" xml:space="preserve"><value>所有檔案</value></data>
+
+  <data name="ColorPicker_Title" xml:space="preserve"><value>選擇顏色</value></data>
+  <data name="ColorPicker_EditColor" xml:space="preserve"><value>編輯顏色</value></data>
+  <data name="ColorPicker_Hex" xml:space="preserve"><value>十六進位</value></data>
+  <data name="ColorPicker_Red" xml:space="preserve"><value>紅色</value></data>
+  <data name="ColorPicker_Green" xml:space="preserve"><value>綠色</value></data>
+  <data name="ColorPicker_Blue" xml:space="preserve"><value>藍色</value></data>
+
+  <data name="Common_None" xml:space="preserve"><value>無</value></data>
+  <data name="Home_ArgumentsLabel" xml:space="preserve"><value>命令列參數</value></data>
+  <data name="TestData_ArgumentsHint" xml:space="preserve"><value>可在每組輸入前使用 # @args: 參數，雙引號可包裹含空格的參數。</value></data>
+  <data name="TestData_Format_DuplicateArguments" xml:space="preserve"><value>測試資料第 {0} 行：同一用例不能重複宣告參數。</value></data>
+  <data name="TestData_Format_UnclosedArgumentQuote" xml:space="preserve"><value>測試資料第 {0} 行：命令列參數包含未閉合的雙引號。</value></data>
+
+  <data name="Home_PreviousCase" xml:space="preserve"><value>上一案例</value></data>
+  <data name="Home_NextCase" xml:space="preserve"><value>下一案例</value></data>
+  <data name="Home_CollapseDetails" xml:space="preserve"><value>收起詳情</value></data>
+  <data name="Home_DemoEncodingLabel" xml:space="preserve"><value>Demo 編碼</value></data>
+  <data name="Home_StudentEncodingLabel" xml:space="preserve"><value>學生輸出編碼</value></data>
+  <data name="Home_InputSection" xml:space="preserve"><value>輸入資料</value></data>
+	<data name="Home_NoInputData" xml:space="preserve"><value>無輸入資料</value></data>
+  <data name="Home_LineDifferences" xml:space="preserve"><value>行級差異</value></data>
+  <data name="Home_InvisibleCharactersNote" xml:space="preserve"><value>除空格外的不可見字元會使用單字元視覺化。</value></data>
+  <data name="Home_DifferenceNumber" xml:space="preserve"><value>差異</value></data>
+  <data name="Home_FirstDifferenceIndex" xml:space="preserve"><value>首個差異字元索引</value></data>
+  <data name="Home_ZeroBased" xml:space="preserve"><value>（從 0 開始）</value></data>
+  <data name="Home_DifferenceLinePrefix" xml:space="preserve"><value>第 </value></data>
+  <data name="Home_DifferenceLineSuffix" xml:space="preserve"><value> 行：</value></data>
+  <data name="Home_FirstDifferencePrefix" xml:space="preserve"><value>第 </value></data>
+  <data name="Home_FirstDifferenceSuffix" xml:space="preserve"><value> 個字元開始有差異（從 0 開始計數）</value></data>
+  <data name="Home_DemoLine" xml:space="preserve"><value>Demo 行</value></data>
+  <data name="Home_StudentLine" xml:space="preserve"><value>學生行</value></data>
+  <data name="Home_EmptyLine" xml:space="preserve"><value>（空行）</value></data>
+  <data name="Home_FileEnded" xml:space="preserve"><value>（檔案已結束）</value></data>
+  <data name="Home_HexSection" xml:space="preserve"><value>HEX 原始位元組</value></data>
+  <data name="Home_RawBytesNote" xml:space="preserve"><value>每行 16 個位元組；&lt;EOF&gt; 表示內容在此結束，本身不佔用位元組。</value></data>
+  <data name="Home_RunInformation" xml:space="preserve"><value>完整執行資訊</value></data>
+  <data name="Difference_ContentMismatch" xml:space="preserve"><value>行內容不同</value></data>
+  <data name="Difference_LineEndingMismatch" xml:space="preserve"><value>行結束符不同</value></data>
+  <data name="Difference_File1HasExtraCharacters" xml:space="preserve"><value>Demo 有多餘內容</value></data>
+  <data name="Difference_File2HasExtraCharacters" xml:space="preserve"><value>學生輸出有多餘內容</value></data>
+  <data name="Difference_File1Ended" xml:space="preserve"><value>Demo 已結束，學生輸出仍有內容</value></data>
+  <data name="Difference_File2Ended" xml:space="preserve"><value>學生輸出已結束，Demo 仍有內容</value></data>
+  <data name="ResultDescription_Passed" xml:space="preserve"><value>Demo 與學生程式的輸出一致。</value></data>
+  <data name="ResultDescription_Failed" xml:space="preserve"><value>學生程式的輸出存在差異，請查看下方行級詳情。</value></data>
+	<data name="ResultDescription_TimedOut" xml:space="preserve"><value>測試會話因逾時而取消，學生程式超過了執行時限。</value></data>
+  <data name="ResultDescription_InvalidTestData" xml:space="preserve"><value>測試會話因資料異常而取消，請檢查本案例輸入。</value></data>
+  <data name="ResultDescription_ExecutionFailed" xml:space="preserve"><value>程式無法啟動或輸出超過限制，請查看完整執行資訊。</value></data>
+	<data name="ResultDescription_Cancelled" xml:space="preserve"><value>測試會話已取消。</value></data>
+  <data name="ComparisonError_EmptyText" xml:space="preserve"><value>{0} 輸出為空，無法進行文字比較。</value></data>
+  <data name="ComparisonError_MixedLineEndings" xml:space="preserve"><value>{0} 輸出混用了 CR、LF 或 CRLF 行結束符。</value></data>
+  <data name="TestData_Examples_Button" xml:space="preserve"><value>範例</value></data>
+  <data name="TestData_Examples_Title" xml:space="preserve"><value>測試資料填寫範例</value></data>
+  <data name="TestData_Examples_GeneralTitle" xml:space="preserve"><value>基本規則</value></data>
+  <data name="TestData_Examples_GeneralDescription" xml:space="preserve"><value>每個 [組名] 開始一個測試案例；組名可以是 [1]、[01] 或 [3-b3-01]，實際編號只按文字中的先後順序產生。組標題後的普通文字會原樣傳入程式，# 開頭的普通註解不會傳入。編輯完成後點擊「儲存」寫入快取。</value></data>
+  <data name="TestData_Examples_3B3Title" xml:space="preserve"><value>範例 1：標準輸入</value></data>
+  <data name="TestData_Examples_3B3ExampleNote" xml:space="preserve"><value>（以 3-b3 為例）</value></data>
+  <data name="TestData_Examples_3B3Description" xml:space="preserve"><value>程式每次執行讀取一個浮點數，因此每組在標題下一行填寫一個輸入值。下一組標題會結束上一組並開始新案例。</value></data>
+  <data name="TestData_Examples_3B3Note" xml:space="preserve"><value>空白行也會作為輸入保留。只有程式確實需要用空白行模擬 Enter 時才加入，不要僅為了排版插入空白行。</value></data>
+  <data name="TestData_Examples_TcTitle" xml:space="preserve"><value>範例 2：命令列參數</value></data>
+  <data name="TestData_Examples_TcDescription" xml:space="preserve"><value>txt_compare 不需要標準輸入時，在組標題後使用 # @args: 寫完整參數。含空格的路徑必須放在雙引號中；參數指令本身不會傳入 stdin。</value></data>
+  <data name="TestData_Examples_TcNote" xml:space="preserve"><value>上例的兩個案例分別使用 normal 和 detailed 顯示方式。請把範例路徑替換為實際檔案路徑；Demo 與學生程式始終接收同一組參數。</value></data>
 </root>

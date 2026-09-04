@@ -10,7 +10,6 @@
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
   xmlns:behaviors="http://schemas.microsoft.com/xaml/behaviors"
-  Title="SettingsPage"
   d:DataContext="{d:DesignInstance local:SettingsPage,
                                      IsDesignTimeCreatable=False}"
   d:DesignHeight="450"
@@ -32,7 +31,7 @@
             FloatAbove="False" />
         </behaviors:Interaction.Behaviors>
 
-        <ui:TextBlock Text="{x:Static res:Translations.Settings_Personalization}" FontTypography="Subtitle" Margin="0,10,0,10"/>
+        <ui:TextBlock Text="{Binding [Settings_Personalization], Source={x:Static res:Translations.Current}}" FontTypography="Subtitle" Margin="0,10,0,10"/>
 
         <ui:CardExpander Margin="0,0,0,5" Height="auto">
             <ui:CardExpander.Header>
@@ -46,8 +45,8 @@
                     <ui:SymbolIcon Grid.Column="0" Symbol="PaintBrush24" Margin="0,0,15,0"/>
 
                     <StackPanel Grid.Column="1">
-                        <ui:TextBlock Text="{x:Static res:Translations.Settings_Theme_Title}" FontTypography="Body" Appearance="Primary"/>
-                        <ui:TextBlock Text="{x:Static res:Translations.Settings_Theme_Description}" FontTypography="Caption" Appearance="Secondary"/>
+                        <ui:TextBlock Text="{Binding [Settings_Theme_Title], Source={x:Static res:Translations.Current}}" FontTypography="Body" Appearance="Primary"/>
+                        <ui:TextBlock Text="{Binding [Settings_Theme_Description], Source={x:Static res:Translations.Current}}" FontTypography="Caption" Appearance="Secondary"/>
                     </StackPanel>
 
                     <ui:TextBlock Grid.Column="2" Text="{Binding ViewModel.PersonalizationSettings.CurrentThemeText}" Margin="0,0,20,0" VerticalAlignment="Center"/>
@@ -60,7 +59,7 @@
                     Margin="0,0,0,8"
                     IsChecked="{Binding ViewModel.PersonalizationSettings.SelectedThemePreference, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=Light, Mode=TwoWay}"
                     >
-                    <TextBlock Text="{x:Static res:Translations.Settings_Theme_Light}" Margin="8,0,0,0" />
+                    <TextBlock Text="{Binding [Settings_Theme_Light], Source={x:Static res:Translations.Current}}" Margin="8,0,0,0" />
                 </RadioButton>
 
                 <RadioButton
@@ -68,14 +67,14 @@
                     Margin="0,0,0,8"
                     IsChecked="{Binding ViewModel.PersonalizationSettings.SelectedThemePreference, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=Dark, Mode=TwoWay}"
                     >
-                    <TextBlock Text="{x:Static res:Translations.Settings_Theme_Dark}" Margin="8,0,0,0" />
+                    <TextBlock Text="{Binding [Settings_Theme_Dark], Source={x:Static res:Translations.Current}}" Margin="8,0,0,0" />
                 </RadioButton>
 
                 <RadioButton 
                     GroupName="ThemeGroup"
                     IsChecked="{Binding ViewModel.PersonalizationSettings.SelectedThemePreference, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=System, Mode=TwoWay}"
                     >
-                    <TextBlock Text="{x:Static res:Translations.Settings_UseSystem}" Margin="8,0,0,0" />
+                    <TextBlock Text="{Binding [Settings_UseSystem], Source={x:Static res:Translations.Current}}" Margin="8,0,0,0" />
                 </RadioButton>
             </StackPanel>
         </ui:CardExpander>
@@ -93,11 +92,21 @@
                     <ui:SymbolIcon Grid.Column="0" Symbol="Color24" Margin="0,0,15,0"/>
 
                     <StackPanel Grid.Column="1">
-                        <ui:TextBlock Text="{x:Static res:Translations.Settings_Accent_Title}" FontTypography="Body" Appearance="Primary"/>
-                        <ui:TextBlock Text="{x:Static res:Translations.Settings_Accent_Description}" FontTypography="Caption" Appearance="Secondary"/>
+                        <ui:TextBlock Text="{Binding [Settings_Accent_Title], Source={x:Static res:Translations.Current}}" FontTypography="Body" Appearance="Primary"/>
+                        <ui:TextBlock Text="{Binding [Settings_Accent_Description], Source={x:Static res:Translations.Current}}" FontTypography="Caption" Appearance="Secondary"/>
                     </StackPanel>
 
-                    <ui:TextBlock Grid.Column="2" Text="{Binding ViewModel.PersonalizationSettings.CurrentAccentColorText}" Margin="0,0,20,0" VerticalAlignment="Center"/>
+                    <StackPanel Grid.Column="2" Orientation="Horizontal" Margin="0,0,20,0" VerticalAlignment="Center">
+                        <ui:TextBlock Text="{Binding ViewModel.PersonalizationSettings.CurrentAccentColorText}" VerticalAlignment="Center" />
+                        <Border Width="34"
+                                Height="20"
+                                Margin="10,0,0,0"
+                                Background="{Binding ViewModel.PersonalizationSettings.CurrentAccentColorBrush}"
+                                BorderBrush="{DynamicResource TextFillColorTertiaryBrush}"
+                                BorderThickness="1"
+                                CornerRadius="4"
+                                ToolTip="{Binding ViewModel.PersonalizationSettings.CurrentAccentColorHex}" />
+                    </StackPanel>
                 </Grid>
             </ui:CardExpander.Header>
             <Grid>
@@ -111,7 +120,7 @@
                 Margin="0,0,0,8"
                 IsChecked="{Binding ViewModel.PersonalizationSettings.SelectedAccentColorPreference, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=Default, Mode=TwoWay}"
                 >
-                        <TextBlock Text="{x:Static res:Translations.Settings_Accent_Default}" Margin="8,0,0,0" />
+                        <TextBlock Text="{Binding [Settings_Accent_Default], Source={x:Static res:Translations.Current}}" Margin="8,0,0,0" />
                     </RadioButton>
 
                     <RadioButton
@@ -119,11 +128,11 @@
                 Margin="0,0,0,8"
                 IsChecked="{Binding ViewModel.PersonalizationSettings.SelectedAccentColorPreference, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=Custom, Mode=TwoWay}"
                 >
-                        <TextBlock Text="{x:Static res:Translations.Settings_Accent_Custom}" Margin="8,0,0,0" />
+                        <TextBlock Text="{Binding [Settings_Accent_Custom], Source={x:Static res:Translations.Current}}" Margin="8,0,0,0" />
                     </RadioButton>
 
                     <ui:Button 
-                        Content="{x:Static res:Translations.Settings_Accent_SelectColor}"
+                        Content="{Binding [Settings_Accent_SelectColor], Source={x:Static res:Translations.Current}}"
                         IsEnabled="{Binding ViewModel.PersonalizationSettings.IsCustomAccentColorSelected}"
                         Command="{Binding SelectAccentColorButtonCommand}">
                         
@@ -133,7 +142,6 @@
             </Grid>
         </ui:CardExpander>
 
-        <!--重启后生效-->
         <ui:CardExpander Margin="0,0,0,5" Height="auto">
             <ui:CardExpander.Header>
                 <Grid>
@@ -146,8 +154,8 @@
                     <ui:SymbolIcon Grid.Column="0" Symbol="ScaleFill24" Margin="0,0,15,0"/>
 
                     <StackPanel Grid.Column="1">
-                        <ui:TextBlock Text="{x:Static res:Translations.Settings_Scale_Title}" FontTypography="Body" Appearance="Primary"/>
-                        <ui:TextBlock Text="{x:Static res:Translations.Settings_Scale_Description}" FontTypography="Caption" Appearance="Secondary"/>
+                        <ui:TextBlock Text="{Binding [Settings_Scale_Title], Source={x:Static res:Translations.Current}}" FontTypography="Body" Appearance="Primary"/>
+                        <ui:TextBlock Text="{Binding [Settings_Scale_Description], Source={x:Static res:Translations.Current}}" FontTypography="Caption" Appearance="Secondary"/>
                     </StackPanel>
 
                     <ui:TextBlock Grid.Column="2" Text="{Binding ViewModel.PersonalizationSettings.CurrentUiScaleText}" Margin="0,0,20,0" VerticalAlignment="Center"/>
@@ -199,12 +207,11 @@
                     GroupName="ScaleGroup" 
                     IsChecked="{Binding ViewModel.PersonalizationSettings.SelectedUiScalePreference, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=System, Mode=TwoWay}"
                     >
-                    <TextBlock Text="{x:Static res:Translations.Settings_UseSystem}" Margin="8,0,0,0" />
+                    <TextBlock Text="{Binding [Settings_UseSystem], Source={x:Static res:Translations.Current}}" Margin="8,0,0,0" />
                 </RadioButton>
             </StackPanel>
         </ui:CardExpander>
 
-        <!--语言设置-->
         <ui:Card Margin="0,0,0,5" Height="auto">
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -216,10 +223,9 @@
                 <ui:SymbolIcon Grid.Column="0" Symbol="LocalLanguage24" Margin="0,0,15,0"/>
 
                 <StackPanel Grid.Column="1">
-                    <ui:TextBlock Text="{x:Static res:Translations.Settings_Language_Title}" FontTypography="Body" Appearance="Primary"/>
-                    <ui:TextBlock Text="{x:Static res:Translations.Settings_Language_Description}" FontTypography="Caption" Appearance="Secondary"/>
+                    <ui:TextBlock Text="{Binding [Settings_Language_Title], Source={x:Static res:Translations.Current}}" FontTypography="Body" Appearance="Primary"/>
+                    <ui:TextBlock Text="{Binding [Settings_Language_Description], Source={x:Static res:Translations.Current}}" FontTypography="Caption" Appearance="Secondary"/>
                 </StackPanel>
-                <!--或者使用DropDownButton-->
                 <ComboBox
                     Grid.Column="2"
                     SelectedValue="{Binding ViewModel.PersonalizationSettings.SelectedLanguagePreference, Mode=TwoWay}"
@@ -231,8 +237,68 @@
                 </ComboBox>
             </Grid>
         </ui:Card>
-        <!---->
-        <ui:TextBlock Text="{x:Static res:Translations.Settings_About_Section}" FontTypography="Subtitle" Margin="0,30,0,10"/>
+        <ui:TextBlock Text="{Binding [Settings_General_Section], Source={x:Static res:Translations.Current}}" FontTypography="Subtitle" Margin="0,30,0,10"/>
+        <ui:Card Margin="0,0,0,5" Height="auto">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="220"/>
+                </Grid.ColumnDefinitions>
+
+                <ui:SymbolIcon Grid.Column="0" Symbol="Timer24" Margin="0,0,15,0"/>
+
+                <StackPanel Grid.Column="1">
+                    <ui:TextBlock Text="{Binding [Settings_Timeout_Title], Source={x:Static res:Translations.Current}}" FontTypography="Body" Appearance="Primary"/>
+                    <ui:TextBlock Text="{Binding [Settings_Timeout_Description], Source={x:Static res:Translations.Current}}" FontTypography="Caption" Appearance="Secondary"/>
+                </StackPanel>
+
+                <StackPanel Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left">
+                    <ui:NumberBox Width="165"
+                                  Minimum="3"
+                                  Maximum="10"
+                                  MaxDecimalPlaces="0"
+                                  SmallChange="1"
+                                  SpinButtonPlacementMode="Inline"
+                                  ValidationMode="InvalidInputOverwritten"
+                                  ClearButtonEnabled="False"
+                                  Value="{Binding ViewModel.ExecutionTimeoutSeconds, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <ui:TextBlock Text="{Binding [Settings_Timeout_Unit], Source={x:Static res:Translations.Current}}"
+                                  Margin="8,0,0,0"
+                                  VerticalAlignment="Center" />
+                </StackPanel>
+            </Grid>
+        </ui:Card>
+        <ui:Card Margin="0,0,0,5" Height="auto">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="220"/>
+                </Grid.ColumnDefinitions>
+
+                <ui:SymbolIcon Grid.Column="0" Symbol="ArrowSync24" Margin="0,0,15,0"/>
+
+                <StackPanel Grid.Column="1">
+                    <ui:TextBlock Text="{Binding [Settings_Parallelism_Title], Source={x:Static res:Translations.Current}}" FontTypography="Body" Appearance="Primary"/>
+                    <ui:TextBlock Text="{Binding [Settings_Parallelism_Description], Source={x:Static res:Translations.Current}}" FontTypography="Caption" Appearance="Secondary"/>
+                </StackPanel>
+
+                <StackPanel Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left">
+                    <ui:NumberBox Width="165"
+                                  Minimum="1"
+                                  Maximum="8"
+                                  MaxDecimalPlaces="0"
+                                  SmallChange="1"
+                                  SpinButtonPlacementMode="Inline"
+                              ValidationMode="InvalidInputOverwritten"
+                              ClearButtonEnabled="False"
+                                  Value="{Binding ViewModel.MaxParallelism, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                </StackPanel>
+            </Grid>
+        </ui:Card>
+        <!-- v1.0 暂不显示“关于”区域，保留内容便于后续恢复。
+        <ui:TextBlock Text="{Binding [Settings_About_Section], Source={x:Static res:Translations.Current}}" FontTypography="Subtitle" Margin="0,30,0,10"/>
         <ui:Card Margin="0,0,0,5" Height="auto">
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -244,11 +310,11 @@
                 <ui:SymbolIcon Grid.Column="0" Symbol="ChatHelp24" Margin="0,0,15,0"/>
 
                 <StackPanel Grid.Column="1">
-                    <ui:TextBlock Text="{x:Static res:Translations.Settings_Help_Title}" FontTypography="Body" Appearance="Primary"/>
-                    <ui:TextBlock Text="{x:Static res:Translations.Settings_Help_Description}" FontTypography="Caption" Appearance="Secondary"/>
+                    <ui:TextBlock Text="{Binding [Settings_Help_Title], Source={x:Static res:Translations.Current}}" FontTypography="Body" Appearance="Primary"/>
+                    <ui:TextBlock Text="{Binding [Settings_Help_Description], Source={x:Static res:Translations.Current}}" FontTypography="Caption" Appearance="Secondary"/>
                 </StackPanel>
 
-                <ui:HyperlinkButton Grid.Column="2" Content="{x:Static res:Translations.Settings_Help_OpenGuide}" NavigateUri="www.bilibili.com"/>
+                <ui:HyperlinkButton Grid.Column="2" Content="{Binding [Settings_Help_OpenGuide], Source={x:Static res:Translations.Current}}" NavigateUri="www.bilibili.com"/>
             </Grid>
         </ui:Card>
         
@@ -263,11 +329,11 @@
                 <ui:SymbolIcon Grid.Column="0" Symbol="PersonFeedback24" Margin="0,0,15,0"/>
 
                 <StackPanel Grid.Column="1">
-                    <ui:TextBlock Text="{x:Static res:Translations.Settings_Feedback_Title}" FontTypography="Body" Appearance="Primary"/>
-                    <ui:TextBlock Text="{x:Static res:Translations.Settings_Feedback_Description}" FontTypography="Caption" Appearance="Secondary"/>
+                    <ui:TextBlock Text="{Binding [Settings_Feedback_Title], Source={x:Static res:Translations.Current}}" FontTypography="Body" Appearance="Primary"/>
+                    <ui:TextBlock Text="{Binding [Settings_Feedback_Description], Source={x:Static res:Translations.Current}}" FontTypography="Caption" Appearance="Secondary"/>
                 </StackPanel>
 
-                <ui:Anchor Grid.Column="2" Content="{x:Static res:Translations.Settings_Feedback_Action}" Appearance="Primary" NavigateUri="www.bilibili.com"/>
+                <ui:Anchor Grid.Column="2" Content="{Binding [Settings_Feedback_Action], Source={x:Static res:Translations.Current}}" Appearance="Primary" NavigateUri="www.bilibili.com"/>
             </Grid>
         </ui:Card>
         <ui:Card Height="auto">
@@ -281,12 +347,13 @@
                 <ui:SymbolIcon Grid.Column="0" Symbol="Info24" Margin="0,0,15,0"/>
 
                 <StackPanel Grid.Column="1">
-                    <ui:TextBlock Text="{x:Static res:Translations.Settings_About_Title}" FontTypography="Body" Appearance="Primary"/>
-                    <ui:TextBlock Text="{x:Static res:Translations.Settings_About_Description}" FontTypography="Caption" Appearance="Secondary"/>
+                    <ui:TextBlock Text="{Binding [Settings_About_Title], Source={x:Static res:Translations.Current}}" FontTypography="Body" Appearance="Primary"/>
+                    <ui:TextBlock Text="{Binding [Settings_About_Description], Source={x:Static res:Translations.Current}}" FontTypography="Caption" Appearance="Secondary"/>
                 </StackPanel>
 
-                <ui:Anchor Grid.Column="2" Content="{x:Static res:Translations.Settings_About_CheckUpdate}" Appearance="Primary" NavigateUri="www.bilibili.com"/>
+                <ui:Anchor Grid.Column="2" Content="{Binding [Settings_About_CheckUpdate], Source={x:Static res:Translations.Current}}" Appearance="Primary" NavigateUri="www.bilibili.com"/>
             </Grid>
         </ui:Card>
+        -->
     </StackPanel>
 </Page>

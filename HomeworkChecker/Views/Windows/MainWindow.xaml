@@ -20,6 +20,7 @@
   WindowCornerPreference="Round"
   WindowStartupLocation="CenterScreen"
   mc:Ignorable="d"
+  PreviewMouseDown="MainWindow_PreviewMouseDown"
 >
     <Grid>
         <ui:TitleBar
@@ -29,7 +30,7 @@
       CloseWindowByDoubleClickOnIcon="True"
     >
             <ui:TitleBar.Icon>
-                <ui:ImageIcon Source="pack://application:,,,/Assets/wpfui-icon-256.png" />
+                <ui:ImageIcon Source="pack://application:,,,/Assets/homeworkchecker-icon-1024.png" />
             </ui:TitleBar.Icon>
         </ui:TitleBar>
         <ui:NavigationView
@@ -49,15 +50,6 @@
             <ui:NavigationView.Header>
                 <ui:BreadcrumbBar x:Name="BreadcrumbBar" Margin="42,32,42,20" />
             </ui:NavigationView.Header>
-            <ui:NavigationView.AutoSuggestBox>
-                <ui:AutoSuggestBox x:Name="AutoSuggestBox" PlaceholderText="Search">
-                    <ui:AutoSuggestBox.Icon>
-                        <ui:IconSourceElement>
-                            <ui:SymbolIconSource Symbol="Search24" />
-                        </ui:IconSourceElement>
-                    </ui:AutoSuggestBox.Icon>
-                </ui:AutoSuggestBox>
-            </ui:NavigationView.AutoSuggestBox>
             <ui:NavigationView.ContentOverlay>
                 <Grid>
                     <ui:SnackbarPresenter x:Name="SnackbarPresenter" />
